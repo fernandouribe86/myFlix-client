@@ -22905,13 +22905,32 @@ class MainView extends _reactDefault.default.Component {
         super();
         this.state = {
             movies: [],
-            selectedMovie: null
+            selectedMovie: null,
+            user: '',
+            directors: [],
+            genres: []
         };
     }
     componentDidMount() {
         _axiosDefault.default.get('https://fernando-myflix-3.herokuapp.com/movies').then((response)=>{
             this.setState({
                 movies: response.data
+            });
+        }).catch((error)=>{
+            console.log(error);
+        });
+        //Directors request
+        _axiosDefault.default.get('https://fernando-myflix-3.herokuapp.com/directors').then((response)=>{
+            this.setState({
+                directors: response.data
+            });
+        }).catch((error)=>{
+            console.log(error);
+        });
+        //Genres request
+        _axiosDefault.default.get('https://fernando-myflix-3.herokuapp.com/genres').then((response)=>{
+            this.setState({
+                genres: response.data
             });
         }).catch((error)=>{
             console.log(error);
@@ -22928,13 +22947,15 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     render() {
-        const { movies , selectedMovie  } = this.state;
+        const { movies , selectedMovie , user , directors , genres  } = this.state;
+        console.log(directors);
+        console.log(genres);
         /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/ if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
-            onLoggedIn: (user)=>this.onLoggedIn(user)
+            onLoggedIn: (user1)=>this.onLoggedIn(user1)
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 51
+                lineNumber: 82
             },
             __self: this
         }));
@@ -22943,25 +22964,31 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 54
+                lineNumber: 85
             },
             __self: this
         }));
+        const m = movies;
+        console.log(selectedMovie);
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 57
+                lineNumber: 89
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
+                genre: genres.filter((x)=>selectedMovie.Genre.includes(x._id)
+                ),
+                director: directors.filter((x)=>selectedMovie.Director.includes(x._id)
+                ),
                 movie: selectedMovie,
                 onBackClick: (newSelectedMovie)=>{
                     this.setSelectedMovie(newSelectedMovie);
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 60
+                    lineNumber: 92
                 },
                 __self: this
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22971,7 +22998,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 62
+                        lineNumber: 94
                     },
                     __self: this
                 }, movie._id)
@@ -23751,12 +23778,12 @@ class MovieView extends _reactDefault.default.Component {
     //   document.removeEventListener('keypress', this.keypressCallback);
     // }
     render() {
-        const { movie , onBackClick  } = this.props;
+        const { movie , onBackClick , director , genre  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "movie-view",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 21
+                lineNumber: 20
             },
             __self: this,
             children: [
@@ -23764,14 +23791,14 @@ class MovieView extends _reactDefault.default.Component {
                     className: "movie-poster",
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 22
+                        lineNumber: 21
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
                         src: movie.ImagePath,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 23
+                            lineNumber: 22
                         },
                         __self: this
                     })
@@ -23780,7 +23807,7 @@ class MovieView extends _reactDefault.default.Component {
                     className: "movie-title",
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 25
+                        lineNumber: 24
                     },
                     __self: this,
                     children: [
@@ -23788,7 +23815,7 @@ class MovieView extends _reactDefault.default.Component {
                             className: "label",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 26
+                                lineNumber: 25
                             },
                             __self: this,
                             children: "Title: "
@@ -23797,7 +23824,7 @@ class MovieView extends _reactDefault.default.Component {
                             className: "value",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 27
+                                lineNumber: 26
                             },
                             __self: this,
                             children: movie.Title
@@ -23808,7 +23835,7 @@ class MovieView extends _reactDefault.default.Component {
                     className: "movie-description",
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 29
+                        lineNumber: 28
                     },
                     __self: this,
                     children: [
@@ -23816,7 +23843,7 @@ class MovieView extends _reactDefault.default.Component {
                             className: "label",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 30
+                                lineNumber: 29
                             },
                             __self: this,
                             children: "Description: "
@@ -23825,7 +23852,7 @@ class MovieView extends _reactDefault.default.Component {
                             className: "value",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 31
+                                lineNumber: 30
                             },
                             __self: this,
                             children: movie.Description
@@ -23836,7 +23863,7 @@ class MovieView extends _reactDefault.default.Component {
                     className: "movie-genre",
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 33
+                        lineNumber: 32
                     },
                     __self: this,
                     children: [
@@ -23844,7 +23871,7 @@ class MovieView extends _reactDefault.default.Component {
                             className: "label",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 34
+                                lineNumber: 33
                             },
                             __self: this,
                             children: "Genre: "
@@ -23853,10 +23880,18 @@ class MovieView extends _reactDefault.default.Component {
                             className: "value",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 35
+                                lineNumber: 34
                             },
                             __self: this,
-                            children: movie.Genres
+                            children: genre.map((x)=>/*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                    __source: {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 34
+                                    },
+                                    __self: this,
+                                    children: x.Name
+                                })
+                            )
                         })
                     ]
                 }),
@@ -23864,7 +23899,7 @@ class MovieView extends _reactDefault.default.Component {
                     className: "movie-director",
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 37
+                        lineNumber: 38
                     },
                     __self: this,
                     children: [
@@ -23872,7 +23907,7 @@ class MovieView extends _reactDefault.default.Component {
                             className: "label",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 38
+                                lineNumber: 39
                             },
                             __self: this,
                             children: "Director: "
@@ -23881,10 +23916,18 @@ class MovieView extends _reactDefault.default.Component {
                             className: "value",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 39
+                                lineNumber: 40
                             },
                             __self: this,
-                            children: movie.Director
+                            children: director.map((x)=>/*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                    __source: {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 40
+                                    },
+                                    __self: this,
+                                    children: x.Name
+                                })
+                            )
                         })
                     ]
                 }),
@@ -23894,7 +23937,7 @@ class MovieView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 41
+                        lineNumber: 44
                     },
                     __self: this,
                     children: "Back"
