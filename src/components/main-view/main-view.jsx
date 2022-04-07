@@ -12,13 +12,9 @@ export class MainView extends React.Component {
     super();
     this.state = {
       movies: [],
-<<<<<<< Updated upstream
       selectedMovie: null
-=======
-      selectedMovie: null,
       user: '',
       directors:[]
->>>>>>> Stashed changes
     };
   }
 
