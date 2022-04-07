@@ -15,12 +15,7 @@ export class MovieView extends React.Component {
   // }
 
   render() {
-<<<<<<< Updated upstream
-    const { movie, onBackClick } = this.props;
-
-=======
     const { movie, onBackClick, director} = this.props;
->>>>>>> Stashed changes
     return(
       <div className="movie-view">
         <div className="movie-poster">

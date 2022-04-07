@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { RegistrationView} from '../registration-view/registration-view';
+import {useHistory} from 'react-router-dom';
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
+  const register = () => {
+    history.push('../registration-view/registration-view.jsx')
+  }
+
+  let history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +35,7 @@ export function LoginView(props) {
         <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
       </label>
       <button type="submit" onClick={handleSubmit}>Submit</button>
-      <p>Don't have an account? <button type="submit" onClick={registrationSubmit}>Register</button></p>
+      <p>Don't have an account? <button type="submit" onClick={register}>Register</button></p>
     </form>
   );
 }
