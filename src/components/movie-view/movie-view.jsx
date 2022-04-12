@@ -15,7 +15,7 @@ export class MovieView extends React.Component {
   // }
 
   render() {
-    const { movie, onBackClick } = this.props;
+    const { movie, onBackClick, director, genre } = this.props;
 
     return(
       <div className="movie-view">
@@ -32,11 +32,11 @@ export class MovieView extends React.Component {
         </div>
         <div className="movie-genre">
           <span className="label">Genre: </span>
-          <span className="value">{movie.Genres}</span>
+          <div className="value genres">{genre.map(x=>x.Name)}</div>
         </div>
         <div className="movie-director">
           <span className="label">Director: </span>
-          <span className="value">{movie.Director}</span>
+          <div className="value directors">{director.map(x=>x.Name)}</div>
         </div>
         <button onClick={() => {onBackClick(null);}}>Back</button>
       </div>
