@@ -3,17 +3,13 @@ import axios from 'axios';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
-<<<<<<< Updated upstream
-import { MovieView} from '../movie-view/movie-view';
-=======
 import { MovieView } from '../movie-view/movie-view';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-import './main-view.scss';
->>>>>>> Stashed changes
+// import './main-view.scss';
 
 export class MainView extends React.Component {
 
@@ -21,14 +17,10 @@ export class MainView extends React.Component {
     super();
     this.state = {
       movies: [],
-<<<<<<< Updated upstream
-      selectedMovie: null
-=======
       selectedMovie: null,
       user: null,
       directors: [],
       genres:[],
->>>>>>> Stashed changes
     };
   }
 
@@ -79,11 +71,7 @@ export class MainView extends React.Component {
   }
 
   render() {
-<<<<<<< Updated upstream
-    const { movies, selectedMovie } = this.state;
-=======
     const { movies, selectedMovie, user, directors, genres} = this.state;
->>>>>>> Stashed changes
 
     /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
 

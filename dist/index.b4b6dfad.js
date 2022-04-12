@@ -1031,7 +1031,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Container":"hEdsw"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./components/main-view/main-view":"4gflv","react-bootstrap/Container":"hEdsw","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-dev-runtime.development.js');
 
@@ -22647,6 +22647,7 @@ $parcel$ReactRefreshHelpers$f7a6.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// import './main-view.scss';
 parcelHelpers.export(exports, "MainView", ()=>MainView
 );
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
@@ -22663,20 +22664,15 @@ var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
-var _mainViewScss = require("./main-view.scss");
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
         this.state = {
             movies: [],
-<<<<<<< Updated upstream:dist/index.6701a6e1.js
-            selectedMovie: null
-=======
             selectedMovie: null,
             user: null,
             directors: [],
             genres: []
->>>>>>> Stashed changes:dist/index.b4b6dfad.js
         };
     }
     componentDidMount() {
@@ -22713,57 +22709,6 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     render() {
-<<<<<<< Updated upstream:dist/index.6701a6e1.js
-        const { movies , selectedMovie  } = this.state;
-        /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/ if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
-            onLoggedIn: (user)=>this.onLoggedIn(user)
-            ,
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 51
-            },
-            __self: this
-        }));
-        //Before the movies have been loaded
-        if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            className: "main-view",
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 54
-            },
-            __self: this
-        }));
-        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            className: "main-view",
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 57
-            },
-            __self: this,
-            children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
-                movie: selectedMovie,
-                onBackClick: (newSelectedMovie)=>{
-                    this.setSelectedMovie(newSelectedMovie);
-                },
-                __source: {
-                    fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 60
-                },
-                __self: this
-            }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                    movie: movie,
-                    onMovieClick: (newSelectedMovie)=>{
-                        this.setSelectedMovie(newSelectedMovie);
-                    },
-                    __source: {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 62
-                    },
-                    __self: this
-                }, movie._id)
-            )
-        }));
-=======
         const { movies , selectedMovie , user: user1 , directors , genres  } = this.state;
         /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/ if (!user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
             onLoggedIn: (user)=>this.onLoggedIn(user)
@@ -22833,7 +22778,6 @@ class MainView extends _reactDefault.default.Component {
             lineNumber: 85,
             columnNumber: 7
         }, this);
->>>>>>> Stashed changes:dist/index.b4b6dfad.js
     }
 }
 exports.default = MainView;
@@ -22843,7 +22787,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","../login-view/login-view":"9YtA0","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","./main-view.scss":"eBaMl","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Container":"hEdsw","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6"}],"jo6P5":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","../login-view/login-view":"9YtA0","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","react-bootstrap/Container":"hEdsw","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jo6P5":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -24402,25 +24346,15 @@ var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _loginViewScss = require("./login-view.scss");
 var _s = $RefreshSig$();
 function LoginView(props) {
     _s();
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
-    const [newUserUsername, setNewUserUsername] = _react.useState('');
-    const [newUserPassword, setNewUserPassword] = _react.useState('');
-    const [newUserEmail, setNewUserEmail] = _react.useState('');
-    const [newUserBirthday, setNewUserBirthday] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, password);
         /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
-    };
-    const handleSubmitNew = (e)=>{
-        e.preventDefault();
-        console.log(newUserUsername, newUserPassword);
-        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(newUserUsername);
     };
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default, {
         children: [
@@ -24431,7 +24365,7 @@ function LoginView(props) {
                         children: " Username: "
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 35,
+                        lineNumber: 20,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Control, {
@@ -24439,13 +24373,13 @@ function LoginView(props) {
                         onChange: (e)=>setUsername(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 36,
+                        lineNumber: 21,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 34,
+                lineNumber: 19,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
@@ -24455,7 +24389,7 @@ function LoginView(props) {
                         children: "Password:"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 40,
+                        lineNumber: 25,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Control, {
@@ -24463,13 +24397,13 @@ function LoginView(props) {
                         onChange: (e)=>setPassword(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 41,
+                        lineNumber: 26,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 39,
+                lineNumber: 24,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_buttonDefault.default, {
@@ -24479,7 +24413,7 @@ function LoginView(props) {
                 children: "Login"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 43,
+                lineNumber: 28,
                 columnNumber: 11
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
@@ -24489,7 +24423,7 @@ function LoginView(props) {
                         children: "Don't have an account yet?"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 46,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
@@ -24499,12 +24433,84 @@ function LoginView(props) {
                                 children: "Username:"
                             }, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 48,
+                                lineNumber: 33,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Control, {
                                 type: "text",
                                 onChange: (e)=>setNewUserUsername(e.target.value)
+                            }, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 34,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 32,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
+                        controlId: "createPassword",
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Label, {
+                                children: "Password:"
+                            }, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 38,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Control, {
+                                type: "password",
+                                onChange: (e)=>setNewUserPassword(e.target.value)
+                            }, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 39,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 37,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
+                        controlId: "createEmail",
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Label, {
+                                children: "Email:"
+                            }, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 43,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Control, {
+                                type: "email",
+                                onChange: (e)=>setNewUserEmail(e.target.value)
+                            }, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 44,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 42,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
+                        controlId: "createBirthday",
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Label, {
+                                children: "Birthday:"
+                            }, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 48,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Control, {
+                                type: "date",
+                                onChange: (e)=>setNewUserBirthday(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/components/login-view/login-view.jsx",
                                 lineNumber: 49,
@@ -24516,78 +24522,6 @@ function LoginView(props) {
                         lineNumber: 47,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
-                        controlId: "createPassword",
-                        children: [
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Label, {
-                                children: "Password:"
-                            }, void 0, false, {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 53,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Control, {
-                                type: "password",
-                                onChange: (e)=>setNewUserPassword(e.target.value)
-                            }, void 0, false, {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 54,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 52,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
-                        controlId: "createEmail",
-                        children: [
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Label, {
-                                children: "Email:"
-                            }, void 0, false, {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 58,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Control, {
-                                type: "email",
-                                onChange: (e)=>setNewUserEmail(e.target.value)
-                            }, void 0, false, {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 59,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 57,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Group, {
-                        controlId: "createBirthday",
-                        children: [
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Label, {
-                                children: "Birthday:"
-                            }, void 0, false, {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 63,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_formDefault.default.Control, {
-                                type: "date",
-                                onChange: (e)=>setNewUserBirthday(e.target.value)
-                            }, void 0, false, {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 64,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 62,
-                        columnNumber: 9
-                    }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_buttonDefault.default, {
                         variant: "primary",
                         type: "submit",
@@ -24595,23 +24529,23 @@ function LoginView(props) {
                         children: "Register"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 67,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 45,
+                lineNumber: 30,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 33,
+        lineNumber: 18,
         columnNumber: 5
     }, this);
 }
-_s(LoginView, "xXhiS2vb01wwoDnCL4oruX8i44Q=");
+_s(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
 _c = LoginView;
 var _c;
 $RefreshReg$(_c, "LoginView");
@@ -24621,157 +24555,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./login-view.scss":"e57ax","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt"}],"e57ax":[function() {},{}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require('react-refresh/runtime');
-function debounce(func, delay) {
-    var args1;
-    var timeout = undefined;
-    return function(args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            timeout = undefined;
-            func.call(null, args);
-        }, delay);
-    };
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30); // Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module.id + ' ' + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module) {
-    if (isReactRefreshBoundary(module.exports)) {
-        registerExportsForReactRefresh(module);
-        if (module.hot) {
-            module.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module.exports;
-            });
-            module.hot.accept(function(getParents) {
-                var prevExports = module.hot.data.prevExports;
-                var nextExports = module.exports; // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === '__esModule') continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-} // When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        if (key === '__esModule') continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module) {
-    var exports = module.exports, id = module.id;
-    Refresh.register(exports, id + ' %exports%');
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        Refresh.register(exportValue, id + ' %exports% ' + key);
-    }
-}
-
-},{"react-refresh/runtime":"786KC"}],"iBZ80":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Form":"iBZ80","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iBZ80":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -26447,7 +26231,37 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
     exports.jsxs = jsxs;
 })();
 
-},{"react":"21dqq","object-assign":"7OXxh"}],"dPzD9":[function(require,module,exports) {
+},{"react":"21dqq","object-assign":"7OXxh"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"dPzD9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -27114,7 +26928,127 @@ const Button = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
 Button.displayName = 'Button';
 exports.default = Button;
 
-},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bwuIu":[function(require,module,exports) {
+},{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require('react-refresh/runtime');
+function debounce(func, delay) {
+    var args1;
+    var timeout = undefined;
+    return function(args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = undefined;
+            func.call(null, args);
+        }, delay);
+    };
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30); // Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module.id + ' ' + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module) {
+    if (isReactRefreshBoundary(module.exports)) {
+        registerExportsForReactRefresh(module);
+        if (module.hot) {
+            module.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module.exports;
+            });
+            module.hot.accept(function(getParents) {
+                var prevExports = module.hot.data.prevExports;
+                var nextExports = module.exports; // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+} // When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module) {
+    var exports = module.exports, id = module.id;
+    Refresh.register(exports, id + ' %exports%');
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        Refresh.register(exportValue, id + ' %exports% ' + key);
+    }
+}
+
+},{"react-refresh/runtime":"786KC"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27207,7 +27141,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/Button":"aPzUt","react-bootstrap/Card":"lAynp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap/Container":"hEdsw"}],"lAynp":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/Button":"aPzUt","react-bootstrap/Card":"lAynp","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap/Container":"hEdsw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lAynp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -27413,84 +27347,6 @@ parcelHelpers.export(exports, "MovieView", ()=>MovieView
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-<<<<<<< Updated upstream:dist/index.6701a6e1.js
-var _s = $RefreshSig$();
-function LoginView(props) {
-    _s();
-    const [username, setUsername] = _react.useState('');
-    const [password, setPassword] = _react.useState('');
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        console.log(username, password);
-        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
-    };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("form", {
-        __source: {
-            fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 16
-        },
-        __self: this,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
-                __source: {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 17
-                },
-                __self: this,
-                children: [
-                    "Username:",
-                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                        type: "text",
-                        value: username,
-                        onChange: (e)=>setUsername(e.target.value)
-                        ,
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 19
-                        },
-                        __self: this
-                    })
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
-                __source: {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 21
-                },
-                __self: this,
-                children: [
-                    "Password:",
-                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                        type: "password",
-                        value: password,
-                        onChange: (e)=>setPassword(e.target.value)
-                        ,
-                        __source: {
-                            fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 23
-                        },
-                        __self: this
-                    })
-                ]
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                type: "submit",
-                onClick: handleSubmit,
-                __source: {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 25
-                },
-                __self: this,
-                children: "Submit"
-            })
-        ]
-    }));
-}
-_s(LoginView, "9FY2cPL9VBDmuhjwpF2ik6flsHs=");
-_c = LoginView;
-var _c;
-$RefreshReg$(_c, "LoginView");
-=======
 class MovieView extends _reactDefault.default.Component {
     // keypressCallback(event) {
     //   console.log(event.key);
@@ -27640,17 +27496,12 @@ class MovieView extends _reactDefault.default.Component {
         }, this);
     }
 }
->>>>>>> Stashed changes:dist/index.b4b6dfad.js
 
   $parcel$ReactRefreshHelpers$e9f6.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< Updated upstream:dist/index.6701a6e1.js
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"jIMPW","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9ChI5"}]},["lBtQh","hkMUN","dLPEP"], "dLPEP", "parcelRequireaec4")
-=======
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eBaMl":[function() {},{}],"lJZlQ":[function() {},{}]},["kn9T2","1SYPb","d8Dch"], "d8Dch", "parcelRequireaec4")
->>>>>>> Stashed changes:dist/index.b4b6dfad.js
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lJZlQ":[function() {},{}]},["kn9T2","1SYPb","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
