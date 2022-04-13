@@ -33,7 +33,7 @@ export class MovieView extends React.Component {
               <p className="label">Description:</p>
               <p className="value">{movie.Description}</p>
           </div>
-          <div className="movie-genre">
+          <div className="movie-genre" >
             <p className="label" >Genres:</p>
             <a href="#"> 
               <p className="value genres" id="genres">{genre.map(x=>x.Name)}</p> 
