@@ -1,0 +1,57 @@
+#movieViewCard{
+  background-color: #fffafa;
+}
+
+
+
+.label{
+  color: #1e334c;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: .01em;
+}
+
+.value{
+  text-align: center;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#movieTitle{
+  color: #4b0000;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 55px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+}
+
+#backButton{
+  background-color: #1e334c;
+  color: white;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+#genres{
+  margin-left: 10px;
+  margin-right: 10px;
+}

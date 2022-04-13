@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-// import './main-view.scss';
+import './main-view.scss';
 
 export class MainView extends React.Component {
 
