@@ -20,7 +20,7 @@ export class MovieCard extends React.Component {
 
     return (
         <Card id="movieCard">
-                  <Card.Img variant="top" src={movie.ImagePath} style={{height: 200}}/>
+                  <Card.Img variant="top" src={movie.ImagePath} style={{width: "100%"}}/>
                 <Card.Body>
                   <Card.Title id="cardTitle">{movie.Title}</Card.Title>
                   <Card.Text id="cardText">{movie.Description}</Card.Text>

@@ -171,26 +171,26 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
-    var REACT_ELEMENT_TYPE = 60103;
-    var REACT_PORTAL_TYPE = 60106;
-    var REACT_FRAGMENT_TYPE = 60107;
-    var REACT_STRICT_MODE_TYPE = 60108;
-    var REACT_PROFILER_TYPE = 60114;
-    var REACT_PROVIDER_TYPE = 60109;
-    var REACT_CONTEXT_TYPE = 60110;
-    var REACT_FORWARD_REF_TYPE = 60112;
-    var REACT_SUSPENSE_TYPE = 60113;
-    var REACT_SUSPENSE_LIST_TYPE = 60120;
-    var REACT_MEMO_TYPE = 60115;
-    var REACT_LAZY_TYPE = 60116;
-    var REACT_BLOCK_TYPE = 60121;
-    var REACT_SERVER_BLOCK_TYPE = 60122;
-    var REACT_FUNDAMENTAL_TYPE = 60117;
-    var REACT_SCOPE_TYPE = 60119;
-    var REACT_OPAQUE_ID_TYPE = 60128;
-    var REACT_DEBUG_TRACING_MODE_TYPE = 60129;
-    var REACT_OFFSCREEN_TYPE = 60130;
-    var REACT_LEGACY_HIDDEN_TYPE = 60131;
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    var REACT_FRAGMENT_TYPE = 0xeacb;
+    var REACT_STRICT_MODE_TYPE = 0xeacc;
+    var REACT_PROFILER_TYPE = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    var REACT_SUSPENSE_TYPE = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
     if (typeof Symbol === 'function' && Symbol.for) {
         var symbolFor = Symbol.for;
         REACT_ELEMENT_TYPE = symbolFor('react.element');
@@ -615,7 +615,7 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
     exports.setSignature = setSignature;
 })();
 
-},{}],"1SYPb":[function(require,module,exports) {
+},{}],"1wDOc":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -696,7 +696,7 @@ function _arrayLikeToArray(arr, len) {
     for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
     return arr2;
 }
-/* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE */ /*::
+/* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser */ /*::
 import type {
   HMRAsset,
   HMRMessage,
@@ -723,11 +723,18 @@ interface ParcelModule {
     _disposeCallbacks: Array<(mixed) => void>,
   |};
 }
+interface ExtensionContext {
+  runtime: {|
+    reload(): void,
+  |};
+}
 declare var module: {bundle: ParcelRequire, ...};
 declare var HMR_HOST: string;
 declare var HMR_PORT: string;
 declare var HMR_ENV_HASH: string;
 declare var HMR_SECURE: boolean;
+declare var chrome: ExtensionContext;
+declare var browser: ExtensionContext;
 */ var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
 function Module(moduleName) {
@@ -782,7 +789,12 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
                     var id = assetsToAccept[i][1];
                     if (!acceptedAssets[id]) hmrAcceptRun(assetsToAccept[i][0], id);
                 }
-            } else window.location.reload();
+            } else if ('reload' in location) location.reload();
+            else {
+                // Web extension context
+                var ext = typeof chrome === 'undefined' ? typeof browser === 'undefined' ? null : browser : chrome;
+                if (ext && ext.runtime && ext.runtime.reload) ext.runtime.reload();
+            }
         }
         if (data.type === 'error') {
             // Log parcel errors to console
@@ -876,7 +888,7 @@ function reloadCSS() {
             var href = links[i].getAttribute('href');
             var hostname = getHostname();
             var servedFromHMRServer = hostname === 'localhost' ? new RegExp('^(https?:\\/\\/(0.0.0.0|127.0.0.1)|localhost):' + getPort()).test(href) : href.indexOf(hostname + ':' + getPort());
-            var absolute = /^https?:\/\//i.test(href) && href.indexOf(window.location.origin) !== 0 && !servedFromHMRServer;
+            var absolute = /^https?:\/\//i.test(href) && href.indexOf(location.origin) !== 0 && !servedFromHMRServer;
             if (!absolute) updateLink(links[i]);
         }
         cssTimeout = null;
@@ -1053,26 +1065,26 @@ module.exports = require('./cjs/react-jsx-dev-runtime.development.js');
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
-    var REACT_ELEMENT_TYPE = 60103;
-    var REACT_PORTAL_TYPE = 60106;
-    exports.Fragment = 60107;
-    var REACT_STRICT_MODE_TYPE = 60108;
-    var REACT_PROFILER_TYPE = 60114;
-    var REACT_PROVIDER_TYPE = 60109;
-    var REACT_CONTEXT_TYPE = 60110;
-    var REACT_FORWARD_REF_TYPE = 60112;
-    var REACT_SUSPENSE_TYPE = 60113;
-    var REACT_SUSPENSE_LIST_TYPE = 60120;
-    var REACT_MEMO_TYPE = 60115;
-    var REACT_LAZY_TYPE = 60116;
-    var REACT_BLOCK_TYPE = 60121;
-    var REACT_SERVER_BLOCK_TYPE = 60122;
-    var REACT_FUNDAMENTAL_TYPE = 60117;
-    var REACT_SCOPE_TYPE = 60119;
-    var REACT_OPAQUE_ID_TYPE = 60128;
-    var REACT_DEBUG_TRACING_MODE_TYPE = 60129;
-    var REACT_OFFSCREEN_TYPE = 60130;
-    var REACT_LEGACY_HIDDEN_TYPE = 60131;
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    exports.Fragment = 0xeacb;
+    var REACT_STRICT_MODE_TYPE = 0xeacc;
+    var REACT_PROFILER_TYPE = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    var REACT_SUSPENSE_TYPE = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
     if (typeof Symbol === 'function' && Symbol.for) {
         var symbolFor = Symbol.for;
         REACT_ELEMENT_TYPE = symbolFor('react.element');
@@ -1835,26 +1847,26 @@ module.exports = require('./cjs/react.development.js');
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
-    var REACT_ELEMENT_TYPE = 60103;
-    var REACT_PORTAL_TYPE = 60106;
-    exports.Fragment = 60107;
-    exports.StrictMode = 60108;
-    exports.Profiler = 60114;
-    var REACT_PROVIDER_TYPE = 60109;
-    var REACT_CONTEXT_TYPE = 60110;
-    var REACT_FORWARD_REF_TYPE = 60112;
-    exports.Suspense = 60113;
-    var REACT_SUSPENSE_LIST_TYPE = 60120;
-    var REACT_MEMO_TYPE = 60115;
-    var REACT_LAZY_TYPE = 60116;
-    var REACT_BLOCK_TYPE = 60121;
-    var REACT_SERVER_BLOCK_TYPE = 60122;
-    var REACT_FUNDAMENTAL_TYPE = 60117;
-    var REACT_SCOPE_TYPE = 60119;
-    var REACT_OPAQUE_ID_TYPE = 60128;
-    var REACT_DEBUG_TRACING_MODE_TYPE = 60129;
-    var REACT_OFFSCREEN_TYPE = 60130;
-    var REACT_LEGACY_HIDDEN_TYPE = 60131;
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    exports.Fragment = 0xeacb;
+    exports.StrictMode = 0xeacc;
+    exports.Profiler = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    exports.Suspense = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
     if (typeof Symbol === 'function' && Symbol.for) {
         var symbolFor = Symbol.for;
         REACT_ELEMENT_TYPE = symbolFor('react.element');
@@ -4020,26 +4032,26 @@ module.exports = require('./cjs/react-dom.development.js');
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
-    var REACT_ELEMENT_TYPE = 60103;
-    var REACT_PORTAL_TYPE = 60106;
-    var REACT_FRAGMENT_TYPE = 60107;
-    var REACT_STRICT_MODE_TYPE = 60108;
-    var REACT_PROFILER_TYPE = 60114;
-    var REACT_PROVIDER_TYPE = 60109;
-    var REACT_CONTEXT_TYPE = 60110;
-    var REACT_FORWARD_REF_TYPE = 60112;
-    var REACT_SUSPENSE_TYPE = 60113;
-    var REACT_SUSPENSE_LIST_TYPE = 60120;
-    var REACT_MEMO_TYPE = 60115;
-    var REACT_LAZY_TYPE = 60116;
-    var REACT_BLOCK_TYPE = 60121;
-    var REACT_SERVER_BLOCK_TYPE = 60122;
-    var REACT_FUNDAMENTAL_TYPE = 60117;
-    var REACT_SCOPE_TYPE = 60119;
-    var REACT_OPAQUE_ID_TYPE = 60128;
-    var REACT_DEBUG_TRACING_MODE_TYPE = 60129;
-    var REACT_OFFSCREEN_TYPE = 60130;
-    var REACT_LEGACY_HIDDEN_TYPE = 60131;
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    var REACT_FRAGMENT_TYPE = 0xeacb;
+    var REACT_STRICT_MODE_TYPE = 0xeacc;
+    var REACT_PROFILER_TYPE = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    var REACT_SUSPENSE_TYPE = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
     if (typeof Symbol === 'function' && Symbol.for) {
         var symbolFor = Symbol.for;
         REACT_ELEMENT_TYPE = symbolFor('react.element');
@@ -23250,7 +23262,7 @@ var toString = Object.prototype.toString;
  * @param {string} content with BOM
  * @return {string} content value without BOM
  */ function stripBOM(content) {
-    if (content.charCodeAt(0) === 65279) content = content.slice(1);
+    if (content.charCodeAt(0) === 0xFEFF) content = content.slice(1);
     return content;
 }
 module.exports = {
@@ -25483,25 +25495,25 @@ module.exports = require('./cjs/react-is.development.js');
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
     var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 60103;
-    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 60106;
-    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 60107;
-    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 60108;
-    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 60114;
-    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 60109;
-    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 60110; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
     // (unstable) APIs that have been removed. Can we remove the symbols?
-    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 60111;
-    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 60111;
-    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 60112;
-    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 60113;
-    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 60120;
-    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 60115;
-    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 60116;
-    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 60121;
-    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 60117;
-    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 60118;
-    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 60119;
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
     function isValidElementType(type) {
         return typeof type === 'string' || typeof type === 'function' || type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
     }
@@ -28005,26 +28017,26 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
-    var REACT_ELEMENT_TYPE = 60103;
-    var REACT_PORTAL_TYPE = 60106;
-    exports.Fragment = 60107;
-    var REACT_STRICT_MODE_TYPE = 60108;
-    var REACT_PROFILER_TYPE = 60114;
-    var REACT_PROVIDER_TYPE = 60109;
-    var REACT_CONTEXT_TYPE = 60110;
-    var REACT_FORWARD_REF_TYPE = 60112;
-    var REACT_SUSPENSE_TYPE = 60113;
-    var REACT_SUSPENSE_LIST_TYPE = 60120;
-    var REACT_MEMO_TYPE = 60115;
-    var REACT_LAZY_TYPE = 60116;
-    var REACT_BLOCK_TYPE = 60121;
-    var REACT_SERVER_BLOCK_TYPE = 60122;
-    var REACT_FUNDAMENTAL_TYPE = 60117;
-    var REACT_SCOPE_TYPE = 60119;
-    var REACT_OPAQUE_ID_TYPE = 60128;
-    var REACT_DEBUG_TRACING_MODE_TYPE = 60129;
-    var REACT_OFFSCREEN_TYPE = 60130;
-    var REACT_LEGACY_HIDDEN_TYPE = 60131;
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    exports.Fragment = 0xeacb;
+    var REACT_STRICT_MODE_TYPE = 0xeacc;
+    var REACT_PROFILER_TYPE = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    var REACT_SUSPENSE_TYPE = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
     if (typeof Symbol === 'function' && Symbol.for) {
         var symbolFor = Symbol.for;
         REACT_ELEMENT_TYPE = symbolFor('react.element');
@@ -29796,7 +29808,7 @@ class MovieCard extends _reactDefault.default.Component {
                     variant: "top",
                     src: movie.ImagePath,
                     style: {
-                        height: 200
+                        width: "100%"
                     }
                 }, void 0, false, {
                     fileName: "src/components/movie-card/movie-card.jsx",
@@ -69526,18 +69538,15 @@ class MovieView extends _reactDefault.default.Component {
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                 className: "movie-view",
                 children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                        className: "movie-poster",
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
-                            src: movie.ImagePath
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 54,
-                            columnNumber: 13
-                        }, this)
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Img, {
+                        variant: "left",
+                        src: movie.ImagePath,
+                        style: {
+                            height: "100%"
+                        }
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -69739,7 +69748,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Card":"lAynp","prop-types":"7wKI2","react-router-dom":"cHIiW","../movie-card/movie-card":"bwuIu","./movie-view.scss":"jnlR5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Button":"aPzUt","axios":"jo6P5"}],"jnlR5":[function() {},{}],"d6HH4":[function() {},{}],"3U8r7":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Card":"lAynp","prop-types":"7wKI2","react-router-dom":"cHIiW","react-bootstrap/Button":"aPzUt","axios":"jo6P5","../movie-card/movie-card":"bwuIu","./movie-view.scss":"jnlR5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jnlR5":[function() {},{}],"d6HH4":[function() {},{}],"3U8r7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$789c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -75078,7 +75087,7 @@ function getBundleURL() {
     try {
         throw new Error();
     } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        var matches = ('' + err.stack).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^)\n]+/g);
         if (matches) // The first two stack frames will be this function and getBundleURLCached.
         // Use the 3rd one, which will be a runtime in the original bundle.
         return getBaseURL(matches[2]);
@@ -75086,10 +75095,10 @@ function getBundleURL() {
     return '/';
 }
 function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+    return ('' + url).replace(/^((?:https?|file|ftp|(chrome|moz)-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
 } // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
 function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    var matches = ('' + url).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^/]+/);
     if (!matches) throw new Error('Origin not found');
     return matches[0];
 }
@@ -75097,6 +75106,6 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"eBaMl":[function() {},{}],"lJZlQ":[function() {},{}]},["kn9T2","1SYPb","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{}],"eBaMl":[function() {},{}],"lJZlQ":[function() {},{}]},["kn9T2","1wDOc","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

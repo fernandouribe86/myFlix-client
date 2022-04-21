@@ -50,9 +50,9 @@ console.log(arr);
     return(
       <Card id="movieViewCard">
         <div className="movie-view">
-          <div className="movie-poster">
-            <img src={movie.ImagePath} />
-          </div>
+          {/* <div className="movie-poster"> */}
+          <Card.Img variant="left" src={movie.ImagePath} style={{height: "100%"}}/>
+          {/* </div> */}
           <div className="movie-title" >
             <p className="value" id="movieTitle">{movie.Title}</p>
           </div>
