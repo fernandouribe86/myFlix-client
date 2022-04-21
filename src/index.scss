@@ -1,12 +1,14 @@
 .body{
-  padding-top: 260px;
+  padding-top: 200px;
   background-color: #1f2727;
   min-height: 100vh;
+  margin: 0;
+
 }
 
 .header{
   background-color: #000b0b;
-  height: 225px;
+  height: 150px;
   position: fixed;
   min-width: 100%;
   z-index: 1000;

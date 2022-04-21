@@ -27,7 +27,7 @@
 }
 
 #loginButton{
-  margin-top: 25px;
+  margin-top: 10px;
   background-color: #23418a;
   border: none;
   color: #fffafa;
@@ -64,9 +64,25 @@
   text-transform: uppercase;
 }
 
-#registerButton{
-  margin-top: 25px;
+#RegisterButton{
   background-color: #fbcccc;
   border: none;
   color: #000b0b;
+}
+
+#login-error{
+  color: red;
+  font-size: 10px;
+}
+
+#required{
+  font-size: 10px;
+  color: gray;
+  margin-top: 10px;
+}
+
+#registerCTA{
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 12px;
 }

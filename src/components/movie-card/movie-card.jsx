@@ -8,6 +8,10 @@ import Container from 'react-bootstrap/Container';
 import { BsFillHeartFill } from 'react-icons/bs';
 import { BsHeart } from 'react-icons/bs';
 
+import { Link } from "react-router-dom";
+
+import { MovieView } from '../movie-view/movie-view';
+
 import './movie-card.scss';
 
 export class MovieCard extends React.Component {
@@ -20,11 +24,12 @@ export class MovieCard extends React.Component {
                 <Card.Body>
                   <Card.Title id="cardTitle">{movie.Title}</Card.Title>
                   <Card.Text id="cardText">{movie.Description}</Card.Text>
+ 
                   <div id="movieCardFooter">
-                    <Button onClick={() => onMovieClick(movie)} variant="link" id="moreButton">...more</Button>
-                    <a href="#">
+                  <Link to={`/movies/${movie._id}`}>
+                    <Button variant="link" id="moreButton">...more</Button>
+                    </Link>
                       <BsFillHeartFill id="heartActive"/>
-                    </a>
                     <a href="#" id="heartLink">
                       <BsHeart id="heartInactive" />
                       </a>
