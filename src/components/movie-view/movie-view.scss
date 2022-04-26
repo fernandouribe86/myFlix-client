@@ -55,3 +55,44 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+#movie-director{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#movie-genre{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#directors{
+  background-color: #4b0000;
+  border-style: none;
+  border-color: none;
+  border-radius: 0;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+
+#genres{
+  background-color: #4b0000;
+  border-style: none;
+  border-color: none;
+  border-radius: 0;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  width: 200px;
+}
+
+Button.hover, Button.focus{
+  background-color: green;
+}

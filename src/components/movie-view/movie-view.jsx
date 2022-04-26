@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
+
 import { Link } from "react-router-dom";
 
 import MovieCard from '../movie-card/movie-card';
@@ -47,12 +48,15 @@ export class MovieView extends React.Component {
   })
 
 console.log(arr);
+
+
     return(
       <Card id="movieViewCard">
-        <div className="movie-view">
-          {/* <div className="movie-poster"> */}
-          <Card.Img variant="left" src={movie.ImagePath} style={{height: "100%"}}/>
-          {/* </div> */}
+        <div id="movie-view">
+          <div className="movie-poster">
+          <Card.Img variant="top" src={movie.ImagePath} />
+    
+          </div>
           <div className="movie-title" >
             <p className="value" id="movieTitle">{movie.Title}</p>
           </div>
@@ -60,17 +64,19 @@ console.log(arr);
               <p className="label">Description:</p>
               <p className="value">{movie.Description}</p>
           </div>
-          <div className="movie-genre" >
+          <div id="movie-genre" >
             <p className="label" >Genres:</p>
-            <Link to={`/genres/${movie.Genres[0]}`}>
-              {arr.map(x=> <Button className="value genres" id="genres"> {x.Name}</Button>)}
-          </Link>
+           
+              {arr.map(x=>  <Link to={`/genres/${x._id}`}><Button className="value genres" id="genres"> {x.Name}</Button> </Link>)}
+
           </div>
-          <div className="movie-director">
+          <div id="movie-director">
             <p className="label">Directed By:</p>
-            <Link to={`/genres/${movie.Director[0]}`}>
-              {directorArr.map(x=> <Button className="value directors" id="directors"> {x.Name}</Button>)}
-          </Link>
+            <div id="button-container-directors">
+              {directorArr.map(x=> <Link to={`/directors/${x._id}`}><Button className="value directors" id="directors">{x.Name}</Button> </Link>)}
+
+
+          </div>
           </div>
           <div class="button-container">
             <Router>

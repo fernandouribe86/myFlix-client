@@ -28,6 +28,7 @@ export function ProfileView(props) {
         setUserdata(response.data);
         setUpdatedUser(response.data)
         setFavoriteMoviesList(props.movies.filter(m => response.data.FavoriteMovies.includes(m._id)));
+
       })
       .catch(err => {
           console.log(err);

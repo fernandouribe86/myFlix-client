@@ -1,0 +1,205 @@
+#login-container {
+  min-height: 100vh;
+}
+
+#loginCard {
+  background-color: snow;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+}
+
+#loginHeader {
+  color: snow;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: #23418a;
+  margin-bottom: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+}
+
+#loginFormBody {
+  text-transform: uppercase;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+#loginButton {
+  color: snow;
+  background-color: #23418a;
+  border: none;
+  margin-top: 25px;
+}
+
+#registerCard {
+  background-color: snow;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+}
+
+#registerForm {
+  background-color: snow;
+  border: none;
+  border-radius: 12px;
+  padding-bottom: 25px;
+}
+
+#registerHeader {
+  color: #000b0b;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: #fbcccc;
+  margin-bottom: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+}
+
+#registerFormBody {
+  text-transform: uppercase;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+#registerButton {
+  color: #000b0b;
+  background-color: #fbcccc;
+  border: none;
+  margin-top: 25px;
+}
+
+#movieCard {
+  min-height: 600px;
+  color: snow;
+  background-color: #1e334c;
+  border-color: snow;
+  margin-bottom: 25px;
+}
+
+#cardTitle {
+  text-transform: uppercase;
+  color: #ff6373;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  font-weight: lighter;
+}
+
+#cardText {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+#movieCardFooter {
+  margin-bottom: 25px;
+  position: absolute;
+  bottom: 0;
+}
+
+#moreButton {
+  color: snow;
+}
+
+#heartInactive {
+  float: right;
+  color: snow;
+  margin-bottom: 25px;
+  font-size: 22px;
+  bottom: 0;
+}
+
+#heartActive {
+  float: right;
+  color: #ff6373;
+  margin-bottom: 25px;
+  font-size: 22px;
+  display: none;
+  bottom: 0;
+}
+
+
+
+.body {
+  min-height: 100vh;
+  background-color: #1f2727;
+  padding-top: 260px;
+}
+
+.header {
+  height: 225px;
+  min-width: 100%;
+  z-index: 1000;
+  background-color: #000b0b;
+  position: fixed;
+}
+
+nav {
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 35px;
+  display: flex;
+}
+
+.header-logo {
+  height: 100px;
+  margin-bottom: 25px;
+}
+
+.nav-list {
+  flex-direction: row;
+  display: flex;
+}
+
+.nav-list li {
+  color: #fff4f5;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  text-decoration: none;
+  list-style: none;
+}
+
+.middle {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+footer {
+  color: #fff4f5;
+  height: 60px;
+  width: 100%;
+  background-color: #000b0b;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+}
+
+.nav-list a:visited {
+  color: #fff4f5;
+  text-decoration: none;
+}
+
+.nav-list a:hover, a:focus {
+  color: #032f4a;
+  text-decoration: none;
+}
+
+.nav-list a:active {
+  color: #c41f25;
+  text-decoration: none;
+}
+
+.copyright {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+/*# sourceMappingURL=index.27d8da6b.css.map */
