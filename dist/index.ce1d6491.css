@@ -80,95 +80,6 @@ footer {
   font-weight: lighter;
 }
 
-#login-container {
-  min-height: 100vh;
-}
-
-#loginCard {
-  background-color: snow;
-  border: none;
-  border-radius: 12px;
-  margin-bottom: 35px;
-  padding-bottom: 25px;
-}
-
-#loginHeader {
-  color: snow;
-  text-transform: uppercase;
-  width: 100%;
-  background-color: #23418a;
-  margin-bottom: 25px;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 35px;
-  font-weight: 300;
-}
-
-#loginFormBody {
-  text-transform: uppercase;
-  font-family: Lato, Arial, Helvetica, sans-serif;
-}
-
-#loginButton {
-  color: snow;
-  background-color: #23418a;
-  border: none;
-  margin-top: 10px;
-}
-
-#registerCard {
-  background-color: snow;
-  border: none;
-  border-radius: 12px;
-  margin-bottom: 35px;
-  padding-bottom: 25px;
-}
-
-#registerForm {
-  background-color: snow;
-  border: none;
-  border-radius: 12px;
-  padding-bottom: 25px;
-}
-
-#registerHeader {
-  color: #000b0b;
-  text-transform: uppercase;
-  width: 100%;
-  background-color: #fbcccc;
-  margin-bottom: 25px;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 35px;
-  font-weight: 300;
-}
-
-#registerFormBody {
-  text-transform: uppercase;
-  font-family: Lato, Arial, Helvetica, sans-serif;
-}
-
-#RegisterButton {
-  color: #000b0b;
-  background-color: #fbcccc;
-  border: none;
-}
-
-#login-error {
-  color: red;
-  font-size: 10px;
-}
-
-#required {
-  color: gray;
-  margin-top: 10px;
-  font-size: 10px;
-}
-
-#registerCTA {
-  margin-top: 25px;
-  margin-bottom: 10px;
-  font-size: 12px;
-}
-
 #movieViewCard {
   background-color: snow;
 }
@@ -324,6 +235,95 @@ Button.hover, Button.focus {
 #poster {
   height: 200px;
   object-fit: cover;
+}
+
+#login-container {
+  min-height: 100vh;
+}
+
+#loginCard {
+  background-color: snow;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+}
+
+#loginHeader {
+  color: snow;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: #23418a;
+  margin-bottom: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+}
+
+#loginFormBody {
+  text-transform: uppercase;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+#loginButton {
+  color: snow;
+  background-color: #23418a;
+  border: none;
+  margin-top: 10px;
+}
+
+#registerCard {
+  background-color: snow;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+}
+
+#registerForm {
+  background-color: snow;
+  border: none;
+  border-radius: 12px;
+  padding-bottom: 25px;
+}
+
+#registerHeader {
+  color: #000b0b;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: #fbcccc;
+  margin-bottom: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+}
+
+#registerFormBody {
+  text-transform: uppercase;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+#RegisterButton {
+  color: #000b0b;
+  background-color: #fbcccc;
+  border: none;
+}
+
+#login-error {
+  color: red;
+  font-size: 10px;
+}
+
+#required {
+  color: gray;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+#registerCTA {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 12px;
 }
 
 
