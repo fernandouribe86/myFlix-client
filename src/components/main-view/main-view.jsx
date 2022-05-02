@@ -36,6 +36,7 @@ class MainView extends React.Component {
       directors: [],
       genres:[],
       user: null,
+      movies: []
     };
   }
 
@@ -114,13 +115,13 @@ class MainView extends React.Component {
     let { movies } = this.props;
     
     const { user, selectedMovie, directors, genres} = this.state;
-
     console.log(movies);
 
     return(
       <Router>
-        <Container>
         <NavbarView user={user} />  
+        <Container>
+
         <Row className="main-view justify-content-md-center">
 
 
@@ -131,6 +132,7 @@ class MainView extends React.Component {
             if (movies.length === 0) return <div className="main-view" />;
            
             return <MoviesList movies={movies}/>;
+
           }} />
 
           <Route path="/register" render={() => {
@@ -220,7 +222,7 @@ class MainView extends React.Component {
         render={({match, history}) => {
           if(!user) return <Redirect to="/" />
           return <Col>
-            <UserUpdate user={user}
+            <UserUpdate user={user} 
             onBackClick={() => history.goBack()}/>
           </Col>
         }} />

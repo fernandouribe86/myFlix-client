@@ -53,10 +53,10 @@ console.log(arr);
     return(
       <Card id="movieViewCard">
         <div id="movie-view">
-          <div className="movie-poster">
-          <Card.Img variant="top" src={movie.ImagePath} />
+          {/* <div id="movie-poster">
+          <Card.Img variant="top" src={movie.ImagePath}/>
     
-          </div>
+          </div> */}
           <div className="movie-title" >
             <p className="value" id="movieTitle">{movie.Title}</p>
           </div>

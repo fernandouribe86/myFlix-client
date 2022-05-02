@@ -1,24 +1,73 @@
 import React from "react";
-import { Col, Row, Card } from "react-bootstrap";
+import { Col, Row, Card, Button } from "react-bootstrap";
 import axios from 'axios';
+import { propTypes } from "prop-types";
+import { connect } from 'react-redux';
+import { setMovies } from '../../actions/actions';
 
-export function UserData(props) {
+import { Link } from "react-router-dom";
 
-  const userdata = props.userdata;
+import './profile-view.scss';
+import { render } from "react-dom";
 
-  return (
-    <Col lg={12}>
-      <Row>
-        <Card  style={{ textAlign: 'center', marginTop: 20 }}>
-      
-          <Card.Title style={{marginTop: 10}} >Profile Card</Card.Title>
-          <Card.Body  style={{ textAlign: 'left', marginTop: 20 }}>
-          <p>Username: {userdata.Username}</p>
-          <p>Email: {userdata.Email}</p>
-          <p>Birthday: {userdata.Birthday}</p>
-          </Card.Body>
-        </Card>
-      </Row>
-    </Col>
-  )
+class UserData extends React.Component {
+
+
+
+
+  // let arr = [];
+
+  // movies.forEach(x=> {
+  //   user.Favorites.forEach( y => {
+  //     if (x._id == y) { arr.push(x) }
+  //   })
+  // })
+
+  // console.log(arr);
+  render()
+  {
+    const userdata = this.props.userdata;
+
+    console.log(this.props.movies);
+
+  //   let arr = [];
+
+  // movies.forEach(x=> {
+  //   user.Favorites.forEach( y => {
+  //     if (x._id == y) { arr.push(x) }
+  //   })
+  // })
+
+  // console.log(arr);
+
+    return (
+      <Col fluid lg={7}>
+        <Row>
+          <Card id="userDataCard" style={{ textAlign: 'center', marginTop: 20 }}>
+            <Card.Title id="profile-header" style={{marginTop: 10}} >My Profile</Card.Title>
+            <Card.Body >
+            <label id="profile-label">Username:</label><p id="profile-text"> {userdata.Username}</p>
+            <label id="profile-label">Email:</label><p id="profile-text"> {userdata.Email}</p>
+            <label id="profile-label">Birthday:</label><p id="profile-text"> {userdata.Birthday}</p>
+            <label id="profile-label">Favorites:</label>
+            <p id="profile-text"> 
+              {userdata.Favorites}      <Button>Test</Button>     </p>
+
+              {/* <p>Test 2 {arr.map(x=>  <Link to={`/movies/${x._id}`}><Button className="value movies" id="movies"> {x.Name}</Button> </Link>)}</p> */}
+
+              {/* <Button variant="outline-danger">Remove from Favorites</Button> */}
+
+
+            </Card.Body>
+          </Card>
+        </Row>
+      </Col>
+    );
+  
+    }};
+
+let mapStateToProps = state => {
+  return { movies: state.movies }
 }
+
+export default connect(mapStateToProps, { setMovies } )(UserData);

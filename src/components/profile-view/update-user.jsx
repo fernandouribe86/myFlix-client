@@ -1,22 +1,37 @@
 import React from "react";
 import { Form, Button, Col, Row, Card, Container } from "react-bootstrap";
+import axios from "axios";
 
 export function UpdatedUser(props){
   const user = props.userdata
   const { handleSubmit, handleUpdate} = props;
+
+  const deleteProfile = (e) => {
+    axios.delete(`https://fernando-myflix-3.herokuapp.com/users/${userdata.Username}`)
+    .then(response => {
+      alert('Your profile has beeen deleted');
+      localStorage.removeItem('user');
+      localStorage.removeItem('token')
+
+      window.open('/', '_self');
+    })
+    .catch(e => {
+      console.log(e);
+    });
+  }
   
   return (
     <Container>
       <Col lg={12}>
         <Row>
-          <Card className="bg-light text-black" border='danger' style={{ textAlign: 'left', marginTop: 20 }}>
-      <Card.Title style={{marginTop: 10, textAlign: "center"}}>Update Profile</Card.Title>
+          <Card id="userUpdateCard">
+      <Card.Title id="profile-header">Update Profile</Card.Title>
           
-      <Form className="profile-form" onSubmit={(e) =>handleSubmit(e)} border='danger' style={{margin: 20}}>
+      <Form  onSubmit={(e) =>handleSubmit(e)} >
     
-        <Form.Group controlId="formUsername" className="mb-3">
-          <Form.Label>Username:</Form.Label>
-          <Form.Control
+        <Form.Group controlId="formUsername" >
+          <Form.Label id="profile-label">Username:</Form.Label>
+          <Form.Control id="form-field"
            type='text'
            name='Username'
            defaultValue={user.Username}
@@ -25,9 +40,9 @@ export function UpdatedUser(props){
            />
         </Form.Group>
        
-        <Form.Group controlId="formPassword" className="mb-3">
-          <Form.Label>Password:</Form.Label>
-          <Form.Control
+        <Form.Group controlId="formPassword" >
+          <Form.Label id="profile-label">Password:</Form.Label>
+          <Form.Control id="form-field"
            type='text'
            name='Password'
            placeholder="New Password (required when updating profile info)"
@@ -35,9 +50,9 @@ export function UpdatedUser(props){
            />
         </Form.Group>
 
-        <Form.Group controlId="formEmail" className="mb-3">
-          <Form.Label>Email:</Form.Label>
-          <Form.Control
+        <Form.Group controlId="formEmail" >
+          <Form.Label id="profile-label">Email:</Form.Label>
+          <Form.Control id="form-field"
            type='text'
            name='Email'
            defaultValue={user.Email}
@@ -45,10 +60,19 @@ export function UpdatedUser(props){
            />
         </Form.Group>
       
-        <Button variant="primary" type="submit" onClick={handleSubmit}>
-          Update
+        <Button id="update" variant="primary" type="submit" onClick={handleSubmit}>
+          UPDATE
         </Button>
-        <h5>After update, please log out, then log back in</h5>
+
+        <Card.Text id="message" >After updating, please log out, then log back in</Card.Text>
+
+        <div id="deleteAccount">
+            <Button  id="delete-btn" type="submit" onClick={deleteProfile}>
+                DELETE PROFILE
+            </Button>
+            <Card.Text id="message" >Are you sure? This can't be undone...</Card.Text>
+        </div>
+
     </Form>
     </Card>
     </Row>

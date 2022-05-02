@@ -4,8 +4,9 @@ import axios from "axios";
 import './profile-view.scss';
 import { Nav } from "react-bootstrap";
 
+import './profile-view.scss';
 
-import {UserData} from './user-data';
+import UserData from './user-data';
 import {UpdatedUser} from './update-user';
 import {FavoriteMovies} from './favorite-movies';
 
@@ -25,15 +26,18 @@ export function ProfileView(props) {
       cancelToken: cancelToken
     })
       .then(response => {
+        console.log(response);
         setUserdata(response.data);
         setUpdatedUser(response.data)
-        setFavoriteMoviesList(props.movies.filter(m => response.data.FavoriteMovies.includes(m._id)));
+        setFavoriteMoviesList(props.movies.filter(m => response.data.Favorites.includes(m._id)));
 
       })
       .catch(err => {
           console.log(err);
       })
   }
+
+
 
   useEffect(() => {
     let source = axios.CancelToken.source();
@@ -98,31 +102,27 @@ export function ProfileView(props) {
 return (
     
     <Container fluid>
+      <div>
+        <Button id="return">
+          <Nav.Link href="/">Back to Movies</Nav.Link>
+        </Button>
+        </div>
     <Row>
-    <Col med={4}>
+    <Col med={12} id="profile-view">
      
         {/* Display userdata */}
         <UserData userdata={userdata} />
-
-        {/* List of favorite movies */}
-        <FavoriteMovies favoriteMoviesList={favoriteMoviesList} removeFav={removeFav} />
-        
-        {/* Form to update user data */}
         <UpdatedUser userdata={userdata} handleSubmit={handleSubmit} handleUpdate={handleUpdate} />
-       
+        
 
-        {/* Link Back to Movies */}
-        <div>
-        <Nav.Link href="/">Back to Movies</Nav.Link>
-        </div>
-
-        {/* Button to delete user */}
-        <div>
+        
+    </Col>
+    {/* Button to delete user */}
+    <div>
             <Button className="mb-3" variant="danger" type="submit" style={{margin: 200}} onClick={deleteProfile}>
                 Delete Profile
             </Button>
         </div>
-    </Col>
     </Row>
     </Container>
     

@@ -4,6 +4,7 @@
   margin-bottom: 25px;
   border-color: #fffafa;
   color: #fffafa;
+  max-height: 600px;
 }
 
 #cardTitle{
@@ -43,7 +44,7 @@
 }
 
 #heartActive{
-  display: none;
+  // display: none;
   float: right;
   margin-bottom: 25px;
   color: #ff6373;
@@ -57,7 +58,7 @@
 }
 
 #poster{
-  height: 200px;
+  height: 375px;
   object-fit: cover;
 }
 
