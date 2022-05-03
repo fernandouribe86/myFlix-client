@@ -71217,23 +71217,15 @@ var _reactRouterDom = require("react-router-dom");
 var _profileViewScss = require("./profile-view.scss");
 var _reactDom = require("react-dom");
 class UserData extends _reactDefault.default.Component {
-    // let arr = [];
-    // movies.forEach(x=> {
-    //   user.Favorites.forEach( y => {
-    //     if (x._id == y) { arr.push(x) }
-    //   })
-    // })
-    // console.log(arr);
     render() {
         const userdata = this.props.userdata;
-        console.log(this.props.movies);
-        //   let arr = [];
-        // movies.forEach(x=> {
-        //   user.Favorites.forEach( y => {
-        //     if (x._id == y) { arr.push(x) }
-        //   })
-        // })
-        // console.log(arr);
+        let arr = [];
+        this.props.movies.forEach((x)=>{
+            userdata.Favorites.forEach((y)=>{
+                if (x._id == y) arr.push(x);
+            });
+        });
+        console.log(arr);
         return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
             fluid: true,
             lg: 7,
@@ -71253,7 +71245,7 @@ class UserData extends _reactDefault.default.Component {
                             children: "My Profile"
                         }, void 0, false, {
                             fileName: "src/components/profile-view/user-data.jsx",
-                            lineNumber: 47,
+                            lineNumber: 33,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Card.Body, {
@@ -71263,7 +71255,7 @@ class UserData extends _reactDefault.default.Component {
                                     children: "Username:"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/user-data.jsx",
-                                    lineNumber: 49,
+                                    lineNumber: 35,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
@@ -71274,7 +71266,7 @@ class UserData extends _reactDefault.default.Component {
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/profile-view/user-data.jsx",
-                                    lineNumber: 49,
+                                    lineNumber: 35,
                                     columnNumber: 56
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
@@ -71282,7 +71274,7 @@ class UserData extends _reactDefault.default.Component {
                                     children: "Email:"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/user-data.jsx",
-                                    lineNumber: 50,
+                                    lineNumber: 36,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
@@ -71293,7 +71285,7 @@ class UserData extends _reactDefault.default.Component {
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/profile-view/user-data.jsx",
-                                    lineNumber: 50,
+                                    lineNumber: 36,
                                     columnNumber: 53
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
@@ -71301,7 +71293,7 @@ class UserData extends _reactDefault.default.Component {
                                     children: "Birthday:"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/user-data.jsx",
-                                    lineNumber: 51,
+                                    lineNumber: 37,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
@@ -71312,7 +71304,7 @@ class UserData extends _reactDefault.default.Component {
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/profile-view/user-data.jsx",
-                                    lineNumber: 51,
+                                    lineNumber: 37,
                                     columnNumber: 56
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
@@ -71320,7 +71312,7 @@ class UserData extends _reactDefault.default.Component {
                                     children: "Favorites:"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/user-data.jsx",
-                                    lineNumber: 52,
+                                    lineNumber: 38,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
@@ -71332,36 +71324,68 @@ class UserData extends _reactDefault.default.Component {
                                             children: "Test"
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/user-data.jsx",
-                                            lineNumber: 54,
+                                            lineNumber: 40,
                                             columnNumber: 41
                                         }, this),
                                         "     "
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/profile-view/user-data.jsx",
-                                    lineNumber: 53,
+                                    lineNumber: 39,
                                     columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                                    children: [
+                                        "Test 2 ",
+                                        arr.map((x)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                                to: `/movies/${x._id}`,
+                                                children: [
+                                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
+                                                        className: "value movies",
+                                                        id: "movies",
+                                                        children: [
+                                                            " ",
+                                                            x.Title
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "src/components/profile-view/user-data.jsx",
+                                                        lineNumber: 42,
+                                                        columnNumber: 69
+                                                    }, this),
+                                                    " "
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/profile-view/user-data.jsx",
+                                                lineNumber: 42,
+                                                columnNumber: 39
+                                            }, this)
+                                        )
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/profile-view/user-data.jsx",
+                                    lineNumber: 42,
+                                    columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/user-data.jsx",
-                            lineNumber: 48,
+                            lineNumber: 34,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/user-data.jsx",
-                    lineNumber: 46,
+                    lineNumber: 32,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/user-data.jsx",
-                lineNumber: 45,
+                lineNumber: 31,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "src/components/profile-view/user-data.jsx",
-            lineNumber: 44,
+            lineNumber: 30,
             columnNumber: 7
         }, this);
     }

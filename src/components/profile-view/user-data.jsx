@@ -12,33 +12,19 @@ import { render } from "react-dom";
 
 class UserData extends React.Component {
 
-
-
-
-  // let arr = [];
-
-  // movies.forEach(x=> {
-  //   user.Favorites.forEach( y => {
-  //     if (x._id == y) { arr.push(x) }
-  //   })
-  // })
-
-  // console.log(arr);
   render()
   {
     const userdata = this.props.userdata;
 
-    console.log(this.props.movies);
+    let arr = [];
 
-  //   let arr = [];
+  this.props.movies.forEach(x=> {
+    userdata.Favorites.forEach( y => {
+      if (x._id == y) { arr.push(x) }
+    })
+  })
 
-  // movies.forEach(x=> {
-  //   user.Favorites.forEach( y => {
-  //     if (x._id == y) { arr.push(x) }
-  //   })
-  // })
-
-  // console.log(arr);
+  console.log(arr);
 
     return (
       <Col fluid lg={7}>
@@ -53,7 +39,7 @@ class UserData extends React.Component {
             <p id="profile-text"> 
               {userdata.Favorites}      <Button>Test</Button>     </p>
 
-              {/* <p>Test 2 {arr.map(x=>  <Link to={`/movies/${x._id}`}><Button className="value movies" id="movies"> {x.Name}</Button> </Link>)}</p> */}
+              <p>Test 2 {arr.map(x=>  <Link to={`/movies/${x._id}`}><Button className="value movies" id="movies"> {x.Title}</Button> </Link>)}</p>
 
               {/* <Button variant="outline-danger">Remove from Favorites</Button> */}
 
