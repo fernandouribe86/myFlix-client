@@ -22,7 +22,7 @@ export function UpdatedUser(props){
   
   return (
     <Container>
-      <Col lg={12}>
+      <Col lg={12} md={12} sm={12} xs={12}>
         <Row>
           <Card id="userUpdateCard">
       <Card.Title id="profile-header">Update Profile</Card.Title>

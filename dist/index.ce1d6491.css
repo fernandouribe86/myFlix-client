@@ -1,16 +1,13 @@
 .body {
   min-height: 100vh;
+  width: 100vw;
   background-color: #1f2727;
   margin: 0;
   padding-top: 200px;
 }
 
-.header {
-  height: 150px;
-  min-width: 100%;
-  z-index: 1000;
-  background-color: #000b0b;
-  position: fixed;
+.app-container, .main-view {
+  width: 100%;
 }
 
 nav {
@@ -19,11 +16,6 @@ nav {
   padding-top: 25px;
   padding-bottom: 35px;
   display: flex;
-}
-
-.header-logo {
-  height: 100px;
-  margin-bottom: 25px;
 }
 
 .nav-list {
@@ -78,6 +70,129 @@ footer {
   font-family: Teko, Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: lighter;
+}
+
+#userDataCard {
+  min-height: 100%;
+  background-color: snow;
+  padding-top: 5px;
+}
+
+#userUpdateCard {
+  min-height: 650px;
+  background-color: snow;
+  margin-top: 20px;
+}
+
+#favoritesProfile {
+  background-color: snow;
+}
+
+#profile-view {
+  flex-direction: row;
+  display: flex;
+}
+
+#profile-header, .profile-header {
+  text-align: center;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #1e334c;
+  margin-top: 15px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.label, #profile-label {
+  text-align: center;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #4b0000;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+}
+
+#profile-text, .profileText {
+  color: #000b0b;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#form-field {
+  color: #000b0b;
+  max-width: 90%;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#return {
+  text-transform: uppercase;
+  color: #000b0b;
+  letter-spacing: .05em;
+  min-width: 200px;
+  max-width: 80%;
+  background-color: #fbcccc;
+  border-style: none;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+#back {
+  color: snow;
+}
+
+#update {
+  min-width: 25%;
+  color: #000b0b;
+  letter-spacing: .05em;
+  background-color: #fbcccc;
+  border: none;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+#message {
+  margin: 10px 25px 25px;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+#deleteAccount {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  display: flex;
+}
+
+#delete-btn {
+  color: snow;
+  letter-spacing: .05em;
+  background-color: #4b0000;
+  border-style: none;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+#favoriteMovies {
+  color: snow;
+  background-color: #1e334c;
+  border-style: none;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #movieViewCard {
@@ -214,16 +329,30 @@ Button.hover, Button.focus {
 
 #heartInactive {
   color: snow;
-  margin-right: 35px;
   font-size: 22px;
   bottom: 0;
+}
+
+#heartInactive:hover, #heartInactive:focus {
+  color: #ff6373;
+}
+
+#heartInactive:active {
+  color: gold;
 }
 
 #heartActive {
   float: right;
   color: #ff6373;
-  margin-bottom: 25px;
   font-size: 22px;
+}
+
+#heartActive:hover, #heartActive:focus {
+  color: snow;
+}
+
+#heartActive:active {
+  color: gold;
 }
 
 #movie-poster {
@@ -237,117 +366,18 @@ Button.hover, Button.focus {
   object-fit: cover;
 }
 
-#userDataCard {
-  min-height: 650px;
-  background-color: snow;
-}
-
-#userUpdateCard {
-  min-height: 650px;
-  background-color: snow;
-  margin-top: 20px;
-  margin-left: 25px;
-  margin-right: 25px;
-}
-
-#favoritesProfile {
-  background-color: snow;
-}
-
-#profile-view {
-  flex-direction: row;
-  display: flex;
-}
-
-#profile-header, .profile-header {
-  text-align: center;
-  letter-spacing: .01em;
-  text-transform: uppercase;
-  color: #1e334c;
-  margin-top: 15px;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 32px;
-  font-weight: 300;
-}
-
-.label, #profile-label {
-  text-align: center;
-  letter-spacing: .01em;
-  text-transform: uppercase;
-  color: #4b0000;
-  margin-left: 25px;
-  margin-right: 25px;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 26px;
-  font-weight: 300;
-}
-
-#profile-text, .profileText {
-  color: #000b0b;
-  font-family: Lato, Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-
-#form-field {
-  color: #000b0b;
-  max-width: 90%;
-  margin-left: 25px;
-  margin-right: 25px;
-  font-family: Lato, Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-
-#return {
-  text-transform: uppercase;
-  color: snow;
-  letter-spacing: .05em;
+#heart-filled {
+  width: 50px;
+  height: 50px;
   background-color: #1e334c;
-  border-style: none;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  font-weight: 300;
+  outline-style: none;
 }
 
-#back {
-  color: snow;
-}
-
-#update {
-  min-width: 25%;
-  color: #000b0b;
-  letter-spacing: .05em;
-  background-color: #fbcccc;
-  border: none;
-  margin-top: 25px;
-  margin-left: 25px;
+#heart-outlined {
+  width: 50px;
+  background-color: #1e334c;
+  outline-style: none;
   margin-right: 25px;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  font-weight: 300;
-}
-
-#message {
-  margin: 10px 25px 25px;
-  font-family: Lato, Arial, Helvetica, sans-serif;
-  font-size: 12px;
-}
-
-#deleteAccount {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  display: flex;
-}
-
-#delete-btn {
-  color: snow;
-  letter-spacing: .05em;
-  background-color: #4b0000;
-  border-style: none;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  font-weight: 300;
 }
 
 #login-container {
@@ -444,6 +474,7 @@ Button.hover, Button.focus {
   min-width: 100%;
   z-index: 1000;
   background-color: #000b0b;
+  margin: 0;
   padding-top: 25px;
   position: fixed;
 }
@@ -486,7 +517,7 @@ Button:hover, Button:focus {
   color: #fff4f5;
 }
 
-.navlink {
+#navlink, .nav-item {
   color: #fff4f5;
 }
 

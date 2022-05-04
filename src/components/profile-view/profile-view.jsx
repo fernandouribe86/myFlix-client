@@ -3,6 +3,7 @@ import {  Button, Col, Row, Card, Container } from "react-bootstrap";
 import axios from "axios";
 import './profile-view.scss';
 import { Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import './profile-view.scss';
 
@@ -103,26 +104,24 @@ return (
     
     <Container fluid>
       <div>
-        <Button id="return">
-          <Nav.Link href="/">Back to Movies</Nav.Link>
-        </Button>
+        
+          <Link to="/">
+            <Button id="return">Back to Movies</Button>
+          </Link>
+        
         </div>
     <Row>
-    <Col med={12} id="profile-view">
-     
+    <Col  lg={7} md={6} sm={12} xs={12} id="profile-view">
+      
         {/* Display userdata */}
         <UserData userdata={userdata} />
+      </Col>
+      <Col>
         <UpdatedUser userdata={userdata} handleSubmit={handleSubmit} handleUpdate={handleUpdate} />
         
 
         
     </Col>
-    {/* Button to delete user */}
-    <div>
-            <Button className="mb-3" variant="danger" type="submit" style={{margin: 200}} onClick={deleteProfile}>
-                Delete Profile
-            </Button>
-        </div>
     </Row>
     </Container>
     

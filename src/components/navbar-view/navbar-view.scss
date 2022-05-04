@@ -5,7 +5,7 @@
   min-width: 100%;
   z-index: 1000;
   padding-top: 25px;
-
+  margin: 0;
 }
 
 #navbar-container{
@@ -53,6 +53,10 @@ width: 100vh;
 color: #fff4f5;
 }
 
-.navlink{
+#navlink{
+  color: #fff4f5;
+}
+
+.nav-item{
   color: #fff4f5;
 }

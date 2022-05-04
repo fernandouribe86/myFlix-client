@@ -60,11 +60,11 @@ export class MovieCard extends React.Component {
                   <Link to={`/movies/${movie._id}`}>
                     <Button variant="link" id="moreButton">...more</Button>
                     </Link>
-                    <Button onClick={removeFavorite} hidden={this.state.hide}>
-                      <BsFillHeartFill id="heartActive"  />
+                    <Button onClick={removeFavorite} hidden={this.state.hide} id="heart-filled" variant="outline-none">
+                      <BsFillHeartFill  id="heartActive"  />
                       </Button>
-                      <Button onClick={addFavorite} hidden={this.state.hide}>
-                        <BsHeart id="heartInactive" />
+                      <Button variant="outline-none" onClick={addFavorite} hidden={this.state.hide} id="heart-outlined">
+                        <BsFillHeartFill id="heartInactive" />
                       </Button>
                 </div>
                 </Card.Body>

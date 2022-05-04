@@ -1,12 +1,11 @@
 #userDataCard{
   background-color: #fffafa;
-  min-height: 650px;
+  min-height: 100%;
+  padding-top: 5px;
 }
 
 #userUpdateCard{
   background-color: #fffafa;
-  margin-left: 25px;
-  margin-right: 25px;
   margin-top: 20px;
   min-height: 650px;
 }
@@ -88,14 +87,16 @@
 }
 
 #return{
-  background-color: #1e334c;
+  background-color: #fbcccc;
   text-transform: uppercase;
-  color: #fffafa;
+  color: #000b0b;
   border-style: none;
   font-family: 'Teko', Arial, Helvetica, sans-serif;
   font-weight: 300;
   font-size: 22px;
   letter-spacing: .05em;
+  min-width: 200px;
+  max-width: 80%;
 }
 
 #back{
@@ -141,4 +142,13 @@
   font-size: 22px;
   color: #fffafa;
   letter-spacing: .05em;
+}
+
+#favoriteMovies{
+  background-color: #1e334c;
+  border-style: none;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #fffafa;
 }

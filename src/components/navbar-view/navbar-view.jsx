@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Nav, Navbar,Button } from "react-bootstrap";
+import { Container, Nav, Navbar,Button, Col, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './navbar-view.scss';
@@ -27,7 +27,7 @@ export function NavbarView({user}) {
 
 
   return (
-    <Navbar className="main-nav" sticky="top" expand="lg" id="navbar">
+    <Navbar  sticky="top"  id="navbar" lg={12}>
         <Container id="navbar-container">
           <div id="navbar-logo-container">
             <img id="navbar-logo" src={logo} alt="myFlix Logo" />
@@ -43,10 +43,10 @@ export function NavbarView({user}) {
                   )}
                   
                   {isAuth() && (
-                    <Button className="navlink" variant="link" onClick={() => { onLoggedOut() }} id="logout">Logout</Button>
+                    <Button variant="link" onClick={() => { onLoggedOut() }} id="logout">Logout</Button>
                   )}
                   {!isAuth() && (
-                      <Nav.Link href="/">Sign-in</Nav.Link>
+                      <Nav.Link href="/" className="nav-item">Sign-in</Nav.Link>
                   )}
                   {!isAuth() && (
                       <Nav.Link href="/register">Sign-up</Nav.Link>

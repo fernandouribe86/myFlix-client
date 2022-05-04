@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row, Card, Button } from "react-bootstrap";
+import { Col, Row, Card, Button, CardGroup } from "react-bootstrap";
 import axios from 'axios';
 import { propTypes } from "prop-types";
 import { connect } from 'react-redux';
@@ -12,22 +12,31 @@ import { render } from "react-dom";
 
 class UserData extends React.Component {
 
+
   render()
   {
     const userdata = this.props.userdata;
+    const movies = this.props.movies;
 
-    let arr = [];
+    let favorites = userdata.Favorites;
 
-  this.props.movies.forEach(x=> {
-    userdata.Favorites.forEach( y => {
-      if (x._id == y) { arr.push(x) }
-    })
-  })
+    console.log(favorites);
+    console.log(movies);
 
-  console.log(arr);
+    let favoriteArr = [];
+
+    favorites.forEach( x => {
+      movies.forEach( y => {
+        if(x == y._id){
+          favoriteArr.push(y);
+        }
+      });
+    });
+
+    console.log(favoriteArr);
 
     return (
-      <Col fluid lg={7}>
+      <Col >
         <Row>
           <Card id="userDataCard" style={{ textAlign: 'center', marginTop: 20 }}>
             <Card.Title id="profile-header" style={{marginTop: 10}} >My Profile</Card.Title>
@@ -36,10 +45,17 @@ class UserData extends React.Component {
             <label id="profile-label">Email:</label><p id="profile-text"> {userdata.Email}</p>
             <label id="profile-label">Birthday:</label><p id="profile-text"> {userdata.Birthday}</p>
             <label id="profile-label">Favorites:</label>
-            <p id="profile-text"> 
-              {userdata.Favorites}      <Button>Test</Button>     </p>
-
-              <p>Test 2 {arr.map(x=>  <Link to={`/movies/${x._id}`}><Button className="value movies" id="movies"> {x.Title}</Button> </Link>)}</p>
+            {/* <p id="profile-text"> 
+              {userdata.Favorites}      <Button>Test</Button>     </p> */}
+              <p>
+                {favoriteArr.map(x=>  
+                <Link to={`/movies/${x._id}`}>  
+                  <Button className="value movies" id="favoriteMovies"> 
+                    {x.Title}
+                      </Button> 
+                  </Link>)}
+                  
+                  </p> 
 
               {/* <Button variant="outline-danger">Remove from Favorites</Button> */}
 

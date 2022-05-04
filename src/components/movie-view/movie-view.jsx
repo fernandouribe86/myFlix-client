@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import { Col, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'; 
 import Button from 'react-bootstrap/Button';
@@ -54,7 +55,7 @@ console.log(arr);
       <Card id="movieViewCard">
         <div id="movie-view">
           {/* <div id="movie-poster">
-          <Card.Img variant="top" src={movie.ImagePath}/>
+          <Card.Img variant="top" src={movie.ImagePath} />
     
           </div> */}
           <div className="movie-title" >
@@ -66,17 +67,18 @@ console.log(arr);
           </div>
           <div id="movie-genre" >
             <p className="label" >Genres:</p>
+            <Col lg={12}>
            
               {arr.map(x=>  <Link to={`/genres/${x._id}`}><Button className="value genres" id="genres"> {x.Name}</Button> </Link>)}
-
+              </Col>
           </div>
           <div id="movie-director">
             <p className="label">Directed By:</p>
-            <div id="button-container-directors">
+            <Col lg={12} id="button-container-directors">
               {directorArr.map(x=> <Link to={`/directors/${x._id}`}><Button className="value directors" id="directors">{x.Name}</Button> </Link>)}
 
 
-          </div>
+          </Col>
           </div>
           <div class="button-container">
             <Router>
