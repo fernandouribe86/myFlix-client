@@ -27,8 +27,9 @@ export function NavbarView({user}) {
 
 
   return (
-    <Navbar  sticky="top"  id="navbar" lg={12}>
-        <Container id="navbar-container">
+    <Navbar className="main-nav" sticky="top" expand="lg" id="navbar">
+          <Col lg={3} md={2} sm={1} xs={1}></Col>
+          <Col lg={6} md={8} sm={10} xs={10} id="navbar-container">
           <div id="navbar-logo-container">
             <img id="navbar-logo" src={logo} alt="myFlix Logo" />
           </div>
@@ -43,10 +44,10 @@ export function NavbarView({user}) {
                   )}
                   
                   {isAuth() && (
-                    <Button variant="link" onClick={() => { onLoggedOut() }} id="logout">Logout</Button>
+                    <Button className="navlink" variant="link" onClick={() => { onLoggedOut() }} id="logout">Logout</Button>
                   )}
                   {!isAuth() && (
-                      <Nav.Link href="/" className="nav-item">Sign-in</Nav.Link>
+                      <Nav.Link href="/">Sign-in</Nav.Link>
                   )}
                   {!isAuth() && (
                       <Nav.Link href="/register">Sign-up</Nav.Link>
@@ -54,7 +55,8 @@ export function NavbarView({user}) {
                 </Nav>
               </Navbar.Collapse>
               </div>
-        </Container>
+              </Col>
+              <Col lg={3} md={2} sm={1} xs={1}></Col>
 
     </Navbar>
   );

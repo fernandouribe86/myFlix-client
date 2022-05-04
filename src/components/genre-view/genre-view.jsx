@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { FavoriteMovies } from "../profile-view/favorite-movies";
 import axios from 'axios';
 
+import './genre-view.scss'
+
 export class GenreView extends React.Component {
 
   constructor(){
@@ -34,12 +36,12 @@ export class GenreView extends React.Component {
       const { genre, movie, onBackClick } = this.props;
   
       return (
-        <Card>
+        <Card id="genreView">
           <Card.Body>
             <Container>
-                <Card.Title >{this.state.genre}</Card.Title>
+                <Card.Title id="genreTitle">{this.state.genre}</Card.Title>
               <Col>
-                <p>
+                <p id="genreDescription">
                 {this.state.description}
                 </p>
               </Col>
@@ -48,17 +50,17 @@ export class GenreView extends React.Component {
             </Container>
             <Container className="d-flex justify-content-between">
               <Button
-                className="custom-btn"
+                id="genreBack"
                 type="submit"
                 onClick={() => {
                   onBackClick();
                 }}
               >
-                Go back
+                 BACK
               </Button>
               <Link to={`/`}>
-                <Button className="custom-btn" type="submit">
-                  Back to Movies List
+                <Button id="genreBackToMovies" type="submit">
+                  RETURN TO MOVIES
                 </Button>
               </Link>
             </Container>

@@ -469,33 +469,152 @@ Button.hover, Button.focus {
   font-size: 12px;
 }
 
+#directorView {
+  background-color: snow;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#directorName {
+  text-transform: uppercase;
+  color: #1e334c;
+  margin-bottom: -15px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  font-weight: lighter;
+}
+
+#bioTitle {
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #4b0000;
+  margin-bottom: -5px;
+  margin-right: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+#life {
+  color: #2e4f78;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 100;
+}
+
+#bio {
+  color: #000b0b;
+  margin-bottom: 45px;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+#directorBack {
+  color: snow;
+  letter-spacing: .1em;
+  background-color: #1e334c;
+  border-style: none;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+#directorBackToMovies {
+  text-transform: uppercase;
+  color: #000b0b;
+  letter-spacing: .05em;
+  min-width: 200px;
+  max-width: 80%;
+  background-color: #fbcccc;
+  border-style: none;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+#genreView {
+  background-color: snow;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#genreTitle {
+  text-transform: uppercase;
+  color: #1e334c;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  font-weight: lighter;
+}
+
+#genreDescription {
+  color: #000b0b;
+  margin-bottom: 25px;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+#genreBack {
+  color: snow;
+  letter-spacing: .1em;
+  background-color: #1e334c;
+  border-style: none;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+#genreBackToMovies {
+  text-transform: uppercase;
+  color: #000b0b;
+  letter-spacing: .05em;
+  min-width: 200px;
+  max-width: 80%;
+  background-color: #fbcccc;
+  border-style: none;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
 #navbar {
-  height: 175px;
+  height: 180px;
   min-width: 100%;
   z-index: 1000;
   background-color: #000b0b;
   margin: 0;
   padding-top: 25px;
   position: fixed;
+  top: 0;
+  left: 0;
 }
 
 #navbar-container {
-  min-width: 100%;
-  background-color: #000b0b;
-  flex-direction: row;
-  margin: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   display: flex;
 }
 
 #navbar-logo {
   height: 90px;
+  margin-right: 25px;
 }
 
 #profile-link {
   color: #fff4f5;
 }
 
-#navbar-contents-container, #logout {
+#navbar-contents-container {
+  text-transform: uppercase;
+  color: #fff4f5;
+  background-color: #000b0bb1;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 32px;
+}
+
+#logout {
   text-transform: uppercase;
   color: #fff4f5;
   font-family: Teko, Arial, Helvetica, sans-serif;
@@ -509,12 +628,12 @@ Button:hover, Button:focus {
 #navbar-toggle {
   color: #fff4f5;
   background-color: gray;
-  margin-right: 150px;
 }
 
 #navbar-collapse {
   width: 100vh;
   color: #fff4f5;
+  justify-content: center;
 }
 
 #navlink, .nav-item {

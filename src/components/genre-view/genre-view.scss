@@ -1,0 +1,44 @@
+#genreView{
+  background-color: #fffafa;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#genreTitle{
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 45px;
+  font-weight: lighter;
+  color: #1e334c;
+}
+
+#genreDescription{
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  color: #000b0b;
+  margin-bottom: 25px;
+}
+
+#genreBack{
+  background-color: #1e334c;
+  color: #fffafa;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: .1em;
+  border-style: none;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#genreBackToMovies{
+  background-color: #fbcccc;
+  text-transform: uppercase;
+  color: #000b0b;
+  border-style: none;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: .05em;
+  min-width: 200px;
+  max-width: 80%;
+}

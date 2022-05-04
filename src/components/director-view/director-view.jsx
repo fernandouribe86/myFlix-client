@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { FavoriteMovies } from "../profile-view/favorite-movies";
 import axios from 'axios';
 
+import './director-view.scss';
+
 export class DirectorView extends React.Component {
 
   constructor(){
@@ -36,33 +38,33 @@ export class DirectorView extends React.Component {
     const { director, movie, onBackClick } = this.props;
 
     return (
-      <Card>
+      <Card id="directorView">
         <Card.Body>
           <Container>
-              <Card.Title >{this.state.directors} </Card.Title>
-            <p>
+              <Card.Title id="directorName">{this.state.directors} </Card.Title>
+            <p id="life">
               {this.state.birth} - {this.state.death}
               </p>
             <Col>
-              <Card.Text>Bio: </Card.Text>
-                {this.state.bio}
+              <Card.Text id="bioTitle">About </Card.Text>
+                <p id="bio">{this.state.bio}</p>
             </Col>
 
             
           </Container>
           <Container className="d-flex justify-content-between">
             <Button
-              className="custom-btn"
+              id="directorBack"
               type="submit"
               onClick={() => {
                 onBackClick();
               }}
             >
-              Go back
+              BACK
             </Button>
             <Link to={`/`}>
-              <Button className="custom-btn" type="submit">
-                Back to List
+              <Button id="directorBackToMovies" type="submit">
+                BACK TO MOVIES
               </Button>
             </Link>
           </Container>
