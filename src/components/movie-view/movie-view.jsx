@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'; 
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-
+import { BsFillHeartFill } from 'react-icons/bs';
+import { BsHeart } from 'react-icons/bs';
 
 import { Link } from "react-router-dom";
 
@@ -15,17 +16,7 @@ import './movie-view.scss';
 
 export class MovieView extends React.Component {
 
-  // keypressCallback(event) {
-  //   console.log(event.key);
-  // }
-
-  // componentDidMount(){
-  //   document.addEventListener('keypress', this.keypressCallback);
-  // }
-
-  // componentWillUnmount(){
-  //   document.removeEventListener('keypress', this.keypressCallback);
-  // }
+  state = { hide: ""}
 
   render() {
     const { movie, onBackClick, directors, genres } = this.props;
@@ -50,6 +41,30 @@ export class MovieView extends React.Component {
 
 console.log(arr);
 
+let user = localStorage.getItem("user");
+
+const addFavorite = (e) => {
+  axios.post(`https://fernando-myflix-3.herokuapp.com/users/${user}/movies/${movie._id}`)
+  .then(response => {
+    alert('Movie has been added to your list of favorites');
+    this.setState({hide: "hidden"});
+  })
+  .catch(e=> {
+    console.log(e);
+  });
+};
+
+const removeFavorite = (e) => {
+  axios.delete(`https://fernando-myflix-3.herokuapp.com/users/${user}/movies/${movie._id}`)
+  .then(response => {
+    alert('Movie has been removed to your list of favorites');
+    this.setState({hide: ""});
+  })
+  .catch(e=> {
+    console.log(e);
+  });
+};
+
 
     return(
       <Card id="movieViewCard">
@@ -58,8 +73,16 @@ console.log(arr);
           <Card.Img variant="top" src={movie.ImagePath} />
     
           </div> */}
-          <div className="movie-title" >
-            <p className="value" id="movieTitle">{movie.Title}</p>
+          <div id="movie-header" >
+              <div id="movieTitle">{movie.Title}</div>
+              <div>
+                <Button onClick={removeFavorite} hidden={this.state.hide} id="heart-filled" variant="outline-none">
+                        <BsFillHeartFill  id="heartActive"  />
+                        </Button>
+                        <Button variant="outline-none" onClick={addFavorite} hidden={this.state.hide} id="heart-outlined">
+                          <BsFillHeartFill id="heartInactive" />
+                        </Button> 
+              </div>
           </div>
           <div className="movie-description">
               <p className="label">Description:</p>

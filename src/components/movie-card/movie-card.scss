@@ -37,7 +37,7 @@
 }
 
 #heartInactive{
-  color: #fffafa;
+  color: #d6d6d6;
   font-size: 22px;
   bottom: 0;
 }
@@ -58,7 +58,7 @@
 }
 
 #heartActive:hover, #heartActive:focus{
-  color: #fffafa;
+  color: #d6d6d6;
 }
 
 #heartActive:active{
@@ -78,7 +78,7 @@
 }
 
 #heart-filled{
-  background-color: #1e334c;
+  background-color: #1e334c00;
   outline-style: none;
   width: 50px;
   height: 50px;
@@ -87,6 +87,6 @@
 #heart-outlined{
   width: 50px;
   margin-right: 25px;
-  background-color: #1e334c;
+  background-color: #1e334c00;
   outline-style: none;
 }
