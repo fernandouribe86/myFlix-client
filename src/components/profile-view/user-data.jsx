@@ -45,8 +45,7 @@ class UserData extends React.Component {
             <label id="profile-label">Email:</label><p id="profile-text"> {userdata.Email}</p>
             <label id="profile-label">Birthday:</label><p id="profile-text"> {userdata.Birthday}</p>
             <label id="profile-label">Favorites:</label>
-            {/* <p id="profile-text"> 
-              {userdata.Favorites}      <Button>Test</Button>     </p> */}
+
               <p>
                 {favoriteArr.map(x=>  
                 <Link to={`/movies/${x._id}`}>  
@@ -54,11 +53,7 @@ class UserData extends React.Component {
                     {x.Title}
                       </Button> 
                   </Link>)}
-                  
                   </p> 
-
-              {/* <Button variant="outline-danger">Remove from Favorites</Button> */}
-
 
             </Card.Body>
           </Card>

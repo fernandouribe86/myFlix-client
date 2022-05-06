@@ -38,7 +38,7 @@ export function NavbarView({user}) {
               <Navbar.Collapse id="navbar-collapse">
                 <Nav className="ml-auto">
                   {isAuth() && (
-                      <Nav.Link id="profile-link" as={Link} to='/users/username' >
+                      <Nav.Link id="profile-link" as={Link} to={`/users/${user}`} >
                          {user}
                         </Nav.Link>
                   )}

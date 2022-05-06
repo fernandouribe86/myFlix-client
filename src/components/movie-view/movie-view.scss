@@ -5,8 +5,10 @@
 #movie-header{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  margin-left: 15px;
+  margin-top: 15px;
 }
 
 
@@ -79,6 +81,7 @@
   text-align: center;
 }
 
+
 #directors{
   background-color: #4b0000;
   border-style: none;
@@ -102,4 +105,12 @@
 
 Button.hover, Button.focus{
   background-color: green;
+}
+
+
+#movieViewHearts{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: middle;
 }

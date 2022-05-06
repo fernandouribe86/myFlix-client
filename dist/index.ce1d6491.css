@@ -201,8 +201,10 @@ footer {
 
 #movie-header {
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  margin-top: 15px;
+  margin-left: 15px;
   display: flex;
 }
 
@@ -296,6 +298,13 @@ Button.hover, Button.focus {
   background-color: green;
 }
 
+#movieViewHearts {
+  justify-content: center;
+  align-items: middle;
+  flex-direction: row;
+  display: flex;
+}
+
 #movieCard {
   min-height: 600px;
   color: snow;
@@ -336,6 +345,7 @@ Button.hover, Button.focus {
 
 #heartInactive {
   color: #d6d6d6;
+  z-index: 500;
   font-size: 22px;
   bottom: 0;
 }
@@ -349,7 +359,6 @@ Button.hover, Button.focus {
 }
 
 #heartActive {
-  float: right;
   color: #ff6373;
   font-size: 22px;
 }

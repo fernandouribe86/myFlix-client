@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import axios from 'axios';
 
 import { connect } from 'react-redux';
@@ -19,6 +19,7 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from "../profile-view/profile-view";
 import { NavbarView } from '../navbar-view/navbar-view';
+import userData from '../profile-view/user-data';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -36,27 +37,28 @@ class MainView extends React.Component {
       directors: [],
       genres:[],
       user: null,
-      movies: []
+      movies: [],
+      favoriteMovies: [],
     };
   }
 
-  getMovies(token){
-    axios.get('https://fernando-myflix-3.herokuapp.com/movies', {
-    headers: { Authorization: `Bearer ${token}`}
-  })
-  .then(response => {
-    this.props.setMovies(response.data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-}
+    getMovies(token){
+      axios.get('https://fernando-myflix-3.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+      this.props.setMovies(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
 
   componentDidMount(){
     let accessToken = localStorage.getItem('token');
     if(accessToken !== null){
       this.setState({
-        user: localStorage.getItem('user')
+        user: localStorage.getItem('user'),
       });
       this.getMovies(accessToken);
     }
@@ -94,11 +96,13 @@ class MainView extends React.Component {
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
-      user: authData.user.Username
+      user: authData.user.Username,
+      favoriteMovies: authData.user.Favorites,
     });
 
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
+    localStorage.setItem('favoriteMovies', authData.user.Favorites);
     this.getMovies(authData.token);
   }
 
@@ -108,14 +112,15 @@ class MainView extends React.Component {
     this.setState({
       user: null
     });
-  }
+  };
 
   render() {
 
     let { movies } = this.props;
     
-    const { user, selectedMovie, directors, genres} = this.state;
+    const { user, selectedMovie, directors, genres } = this.state;
     console.log(movies);
+    console.log(user);
 
     return(
       <Router>
@@ -150,7 +155,7 @@ class MainView extends React.Component {
            </Col>
             if(movies.length === 0) return <div className="main-view" />;
             return <Col md={8}>
-              <MovieView genres ={this.state.genres} directors={this.state.directors} movie={movies.find(m => m._id === match.params._id)} onBackClick={() => history.goBack()} />
+              <MovieView user={this.state.user} genres ={this.state.genres} directors={this.state.directors} movie={movies.find(m => m._id === match.params._id)} onBackClick={() => history.goBack()} />
               </Col>
           }} />
 

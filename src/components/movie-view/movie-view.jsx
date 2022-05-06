@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 import { Col, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
@@ -7,10 +7,13 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { BsFillHeartFill } from 'react-icons/bs';
 import { BsHeart } from 'react-icons/bs';
+import { Connect } from "react-redux";
 
 import { Link } from "react-router-dom";
 
 import MovieCard from '../movie-card/movie-card';
+import { ProfileView } from "../profile-view/profile-view";
+import userData from "../profile-view/user-data";
 
 import './movie-view.scss';
 
@@ -21,50 +24,65 @@ export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick, directors, genres } = this.props;
 
+    let user = localStorage.getItem("user");
+
+    // IS THIS MOVIE A FAVORITE ALREADY?
+    let favorites = localStorage.getItem("favoriteMovies");
+    console.log(user);
+    console.log(favorites);
+
     console.log(movie);
+    localStorage.setItem('movieId', movie._id);
 
-  let arr = [];
+    let selectedMovieId = localStorage.getItem("movieId");
+    console.log(selectedMovieId);
 
-  genres.forEach(x=> {
-    movie.Genres.forEach( y => {
-      if (x._id == y) { arr.push(x) }
-    })
-  })
+    console.log(typeof(favorites));
 
-  let directorArr = []
+    // console.log((favorites.find( x => x == selectedMovieId))+ ' Testing 456');
 
-  directors.forEach(x=> {
-    movie.Director.forEach( y => {
-      if (x._id == y) { directorArr.push(x) }
-    })
-  })
 
-console.log(arr);
+    // LOOPS FOR MAPPING GENRES AND DIRECTORS
+      let arr = [];
 
-let user = localStorage.getItem("user");
+      genres.forEach(x=> {
+        movie.Genres.forEach( y => {
+          if (x._id == y) { arr.push(x) }
+        })
+      })
 
-const addFavorite = (e) => {
-  axios.post(`https://fernando-myflix-3.herokuapp.com/users/${user}/movies/${movie._id}`)
-  .then(response => {
-    alert('Movie has been added to your list of favorites');
-    this.setState({hide: "hidden"});
-  })
-  .catch(e=> {
-    console.log(e);
-  });
-};
+      let directorArr = []
 
-const removeFavorite = (e) => {
-  axios.delete(`https://fernando-myflix-3.herokuapp.com/users/${user}/movies/${movie._id}`)
-  .then(response => {
-    alert('Movie has been removed to your list of favorites');
-    this.setState({hide: ""});
-  })
-  .catch(e=> {
-    console.log(e);
-  });
-};
+      directors.forEach(x=> {
+        movie.Director.forEach( y => {
+          if (x._id == y) { directorArr.push(x) }
+        })
+      })
 
+    console.log(arr);
+
+
+    const addFavorite = (e) => {
+      axios.post(`https://fernando-myflix-3.herokuapp.com/users/${user}/movies/${movie._id}`)
+      .then(response => {
+        alert('Movie has been added to your list of favorites');
+        this.setState({hide: "hidden"});
+      })
+      .catch(e=> {
+        console.log(e);
+      });
+    };
+
+    const removeFavorite = (e) => {
+      axios.delete(`https://fernando-myflix-3.herokuapp.com/users/${user}/movies/${movie._id}`)
+      .then(response => {
+        alert('Movie has been removed to your list of favorites');
+        this.setState({hide: ""});
+      })
+      .catch(e=> {
+        console.log(e);
+      });
+    };
 
     return(
       <Card id="movieViewCard">
@@ -75,7 +93,7 @@ const removeFavorite = (e) => {
           </div> */}
           <div id="movie-header" >
               <div id="movieTitle">{movie.Title}</div>
-              <div>
+              <div id="movieViewHearts">
                 <Button onClick={removeFavorite} hidden={this.state.hide} id="heart-filled" variant="outline-none">
                         <BsFillHeartFill  id="heartActive"  />
                         </Button>

@@ -40,6 +40,7 @@
   color: #d6d6d6;
   font-size: 22px;
   bottom: 0;
+  z-index: 500;
 }
 
 #heartInactive:hover, #heartInactive:focus{
@@ -52,7 +53,6 @@
 
 #heartActive{
   // display: none;
-  float: right;
   color: #ff6373;
   font-size: 22px;
 }
