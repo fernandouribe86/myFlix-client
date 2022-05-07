@@ -58,6 +58,15 @@
   letter-spacing: .3em;
   margin-bottom: 25px;
   margin-top: 25px;
+  border-style: none;
+}
+
+#backButton:hover, #backButton:focus{
+  background-color: #355b88;
+}
+
+#backButton:active{
+  background-color: rgb(255, 187, 0);
 }
 
 #genres{
@@ -101,10 +110,15 @@
   margin-right: 25px;
   margin-bottom: 25px;
   width: 200px;
+
 }
 
-Button.hover, Button.focus{
-  background-color: green;
+#genres:hover, #genres:focus, #directors:hover, #directors:focus{
+  background-color: rgb(168, 36, 41);
+}
+
+#genres:active, #directors:focus{
+  background-color: rgb(255, 187, 0);
 }
 
 

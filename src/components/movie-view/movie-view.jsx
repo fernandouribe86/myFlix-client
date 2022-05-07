@@ -110,13 +110,13 @@ export class MovieView extends React.Component {
             <p className="label" >Genres:</p>
             <Col lg={12}>
            
-              {arr.map(x=>  <Link to={`/genres/${x._id}`}><Button className="value genres" id="genres"> {x.Name}</Button> </Link>)}
+              {arr.map(x=>  <Link to={`/genres/${x._id}`}><Button className="value genres" id="genres">{x.Name}</Button></Link>)}
               </Col>
           </div>
           <div id="movie-director">
             <p className="label">Directed By:</p>
             <Col lg={12} id="button-container-directors">
-              {directorArr.map(x=> <Link to={`/directors/${x._id}`}><Button className="value directors" id="directors">{x.Name}</Button> </Link>)}
+              {directorArr.map(x=> <Link to={`/directors/${x._id}`}><Button className="value directors" id="directors">{x.Name}</Button></Link>)}
 
 
           </Col>

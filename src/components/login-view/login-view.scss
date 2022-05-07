@@ -31,6 +31,15 @@
   background-color: #23418a;
   border: none;
   color: #fffafa;
+  width: 200px;
+}
+
+#loginButton:hover, #loginButton:focus{
+  background-color: #486ac7;
+}
+
+#loginButton:active{
+  background-color: rgb(255, 287, 0);
 }
 
 #registerCard{
@@ -68,6 +77,15 @@
   background-color: #fbcccc;
   border: none;
   color: #000b0b;
+  width: 200px;
+}
+
+#RegisterButton:hover, #RegisterButton:focus{
+  background-color: #d78686;
+}
+
+#RegisterButton:active{
+  background-color: #9b2d2d;
 }
 
 #login-error{

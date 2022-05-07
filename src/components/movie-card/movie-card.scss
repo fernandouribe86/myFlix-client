@@ -36,6 +36,14 @@
   font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
 
+#moreButton:hover, #moreButton:focus{
+  color: rgb(255, 187, 0);
+}
+
+#moreButton:active{
+  color: rgb(168, 36, 41);
+}
+
 #heartInactive{
   color: #d6d6d6;
   font-size: 22px;

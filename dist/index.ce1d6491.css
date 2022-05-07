@@ -244,12 +244,21 @@ footer {
   text-transform: uppercase;
   letter-spacing: .3em;
   background-color: #1e334c;
+  border-style: none;
   margin-top: 25px;
   margin-bottom: 25px;
   padding: 10px 50px;
   font-family: Teko, Arial, Helvetica, sans-serif;
   font-size: 22px;
   font-weight: 300;
+}
+
+#backButton:hover, #backButton:focus {
+  background-color: #355b88;
+}
+
+#backButton:active {
+  background-color: #fb0;
 }
 
 #genres {
@@ -294,8 +303,12 @@ footer {
   margin-right: 25px;
 }
 
-Button.hover, Button.focus {
-  background-color: green;
+#genres:hover, #genres:focus, #directors:hover, #directors:focus {
+  background-color: #a82429;
+}
+
+#genres:active, #directors:focus {
+  background-color: #fb0;
 }
 
 #movieViewHearts {
@@ -341,6 +354,14 @@ Button.hover, Button.focus {
 #moreButton {
   color: snow;
   font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+#moreButton:hover, #moreButton:focus {
+  color: #fb0;
+}
+
+#moreButton:active {
+  color: #a82429;
 }
 
 #heartInactive {
@@ -426,9 +447,18 @@ Button.hover, Button.focus {
 
 #loginButton {
   color: snow;
+  width: 200px;
   background-color: #23418a;
   border: none;
   margin-top: 10px;
+}
+
+#loginButton:hover, #loginButton:focus {
+  background-color: #486ac7;
+}
+
+#loginButton:active {
+  background-color: #ff0;
 }
 
 #registerCard {
@@ -464,8 +494,17 @@ Button.hover, Button.focus {
 
 #RegisterButton {
   color: #000b0b;
+  width: 200px;
   background-color: #fbcccc;
   border: none;
+}
+
+#RegisterButton:hover, #RegisterButton:focus {
+  background-color: #d78686;
+}
+
+#RegisterButton:active {
+  background-color: #9b2d2d;
 }
 
 #login-error {
@@ -536,6 +575,14 @@ Button.hover, Button.focus {
   font-weight: 300;
 }
 
+#directorBack:hover, #directorBack:focus {
+  background-color: #355b88;
+}
+
+#directorBack:active {
+  background-color: #fb0;
+}
+
 #directorBackToMovies {
   text-transform: uppercase;
   color: #000b0b;
@@ -547,6 +594,14 @@ Button.hover, Button.focus {
   font-family: Teko, Arial, Helvetica, sans-serif;
   font-size: 22px;
   font-weight: 300;
+}
+
+#directorBackToMovies:hover, #directorBackToMovies:focus {
+  background-color: #d78686;
+}
+
+#directorBackToMovies:active {
+  background-color: #9b2d2d;
 }
 
 #genreView {
@@ -581,6 +636,14 @@ Button.hover, Button.focus {
   font-weight: 300;
 }
 
+#genreBack:hover, #genreBack:focus {
+  background-color: #355b88;
+}
+
+#genreBack:active {
+  background-color: #fb0;
+}
+
 #genreBackToMovies {
   text-transform: uppercase;
   color: #000b0b;
@@ -594,13 +657,21 @@ Button.hover, Button.focus {
   font-weight: 300;
 }
 
+#genreBackToMovies:hover, #genreBackToMovies:focus {
+  background-color: #d78686;
+}
+
+#genreBackToMovies:active {
+  background-color: #9b2d2d;
+}
+
 #navbar {
-  height: 180px;
+  height: 170px;
   min-width: 100%;
   z-index: 1000;
   background-color: #000b0b;
   margin: 0;
-  padding-top: 25px;
+  padding-top: 10px;
   position: fixed;
   top: 0;
   left: 0;
@@ -622,10 +693,18 @@ Button.hover, Button.focus {
   color: #fff4f5;
 }
 
+#profile-link:hover, #profile-link:focus {
+  color: #fb0;
+}
+
+#profile-link:active {
+  color: #a82429;
+}
+
 #navbar-contents-container {
   text-transform: uppercase;
   color: #fff4f5;
-  background-color: #000b0bb1;
+  text-align: center;
   font-family: Teko, Arial, Helvetica, sans-serif;
   font-size: 32px;
 }
@@ -635,10 +714,15 @@ Button.hover, Button.focus {
   color: #fff4f5;
   font-family: Teko, Arial, Helvetica, sans-serif;
   font-size: 32px;
+  text-decoration: none;
 }
 
-Button:hover, Button:focus {
-  color: red;
+#logout:hover, #logout:focus {
+  color: #fb0;
+}
+
+#logout:active {
+  color: #a82429;
 }
 
 #navbar-toggle {
@@ -646,14 +730,36 @@ Button:hover, Button:focus {
   background-color: gray;
 }
 
-#navbar-collapse {
-  width: 100vh;
+#navbar-collapse, #navlink, .nav-item, #signInLink {
   color: #fff4f5;
-  justify-content: center;
 }
 
-#navlink, .nav-item {
+#signInLink:hover, #signInLink:focus {
+  color: #fb0;
+}
+
+#signInLink:active {
+  color: #a82429;
+}
+
+#signUpLink {
   color: #fff4f5;
+}
+
+#signUpLink:hover, #signUpLink:focus {
+  color: #fb0;
+}
+
+#signUpLink:active {
+  color: #a82429;
+}
+
+#nav-container {
+  width: 100vw;
+  text-align: center;
+  background-color: #000b0bb1;
+  justify-content: center;
+  margin-top: -10px;
 }
 
 

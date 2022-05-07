@@ -49,6 +49,14 @@
   padding-right: 25px;
 }
 
+#directorBack:hover, #directorBack:focus{
+  background-color: #355b88;
+}
+
+#directorBack:active{
+  background-color: rgb(255, 187, 0);
+}
+
 #directorBackToMovies{
   background-color: #fbcccc;
   text-transform: uppercase;
@@ -60,4 +68,12 @@
   letter-spacing: .05em;
   min-width: 200px;
   max-width: 80%;
+}
+
+#directorBackToMovies:hover, #directorBackToMovies:focus{
+  background-color: #d78686;
+}
+
+#directorBackToMovies:active{
+  background-color: #9b2d2d;
 }
