@@ -39,6 +39,7 @@ class MainView extends React.Component {
       user: null,
       movies: [],
       favoriteMovies: [],
+      u: {},
     };
   }
 
@@ -96,6 +97,7 @@ class MainView extends React.Component {
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
+      u: authData.user,
       user: authData.user.Username,
       favoriteMovies: authData.user.Favorites,
     });
@@ -114,13 +116,17 @@ class MainView extends React.Component {
     });
   };
 
+
   render() {
 
     let { movies } = this.props;
+
+    console.log(this.state.u);
     
-    const { user, selectedMovie, directors, genres } = this.state;
+    const { user, selectedMovie, directors, genres, favoriteMovies } = this.state;
     console.log(movies);
     console.log(user);
+    console.log(favoriteMovies);
 
     return(
       <Router>
@@ -155,7 +161,7 @@ class MainView extends React.Component {
            </Col>
             if(movies.length === 0) return <div className="main-view" />;
             return <Col md={8}>
-              <MovieView user={this.state.user} genres ={this.state.genres} directors={this.state.directors} movie={movies.find(m => m._id === match.params._id)} onBackClick={() => history.goBack()} />
+              <MovieView  favoriteMovies={favoriteMovies}  user={this.state.user} genres ={this.state.genres} directors={this.state.directors} movie={movies.find(m => m._id === match.params._id)} onBackClick={() => history.goBack()} />
               </Col>
           }} />
 
@@ -214,12 +220,14 @@ class MainView extends React.Component {
             />
 
           <Route path='/users/:username'
-        render={({history, match}) => {
+        render={(
+          {history, match}
+          ) => {
           if(!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
           if(movies.length === 0) return <div className="main-view" />
           return<Col>
           
-          <ProfileView history={history} movies={movies} user={user} />
+          <ProfileView favoriteMovies={favoriteMovies} u={this.state.u} history={history} movies={movies} user={user} />
           </Col>
         }} />
 

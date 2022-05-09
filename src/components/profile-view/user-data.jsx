@@ -34,6 +34,8 @@ class UserData extends React.Component {
     });
 
     console.log(favoriteArr);
+    
+    console.log(this.props.userdata);
 
     return (
       <Col >

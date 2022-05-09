@@ -1,11 +1,8 @@
 import React from "react";
-import { Container, Nav, Navbar,Button, Col, Row } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Nav, Navbar,Button, Col} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './navbar-view.scss';
 import logo from '../../hero-assets/myflix-logo-on-white copy.png';
-import GiDirectorChair from 'react-icons';
-
 
 export function NavbarView({user}) {
 
@@ -24,7 +21,6 @@ export function NavbarView({user}) {
       return false;
     }
   };
-
 
   return (
     <Navbar className="main-nav" sticky="top" expand="lg" id="navbar">

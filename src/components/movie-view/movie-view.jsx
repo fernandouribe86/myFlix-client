@@ -22,17 +22,18 @@ export class MovieView extends React.Component {
   state = { hide: ""}
 
   render() {
-    const { movie, onBackClick, directors, genres } = this.props;
+    const { movie, onBackClick, directors, genres, favoriteMovies } = this.props;
 
     let user = localStorage.getItem("user");
 
     // IS THIS MOVIE A FAVORITE ALREADY?
-    let favorites = localStorage.getItem("favoriteMovies");
+    let favorites = favoriteMovies;
     console.log(user);
     console.log(favorites);
 
+
+
     console.log(movie);
-    localStorage.setItem('movieId', movie._id);
 
     let selectedMovieId = localStorage.getItem("movieId");
     console.log(selectedMovieId);
@@ -94,12 +95,14 @@ export class MovieView extends React.Component {
           <div id="movie-header" >
               <div id="movieTitle">{movie.Title}</div>
               <div id="movieViewHearts">
-                <Button onClick={removeFavorite} hidden={this.state.hide} id="heart-filled" variant="outline-none">
-                        <BsFillHeartFill  id="heartActive"  />
-                        </Button>
-                        <Button variant="outline-none" onClick={addFavorite} hidden={this.state.hide} id="heart-outlined">
-                          <BsFillHeartFill id="heartInactive" />
-                        </Button> 
+                {/* <Button onClick={removeFavorite} hidden={this.state.hide} id="heart-filled" variant="outline-none"> */}
+                  
+                    {(favoriteMovies.find(x => x == selectedMovieId)!= undefined) ?
+                    <Button onClick={removeFavorite} hidden={this.state.hide} id="heart-filled" variant="outline-none"> 
+                      <BsFillHeartFill  id="heartActive"  />:
+                      </Button>
+                      <Button variant="outline-none" onClick={addFavorite} hidden={this.state.hide} id="heart-outlined">
+                      <BsFillHeartFill id="heartInactive" /> </Button>}
               </div>
           </div>
           <div className="movie-description">

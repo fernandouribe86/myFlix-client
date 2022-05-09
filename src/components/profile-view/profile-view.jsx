@@ -16,7 +16,7 @@ export function ProfileView(props) {
 
   const [userdata, setUserdata] = useState({});
   const [updatedUser, setUpdatedUser] = useState({});
-  const [favoriteMoviesList, setFavoriteMoviesList] = useState([]);
+  const [favoriteMoviesList, setFavoriteMoviesList] = useState(props.favoriteMovies);
  
 
   let token = localStorage.getItem('token');
@@ -29,8 +29,8 @@ export function ProfileView(props) {
       .then(response => {
         console.log(response);
         setUserdata(response.data);
-        setUpdatedUser(response.data)
-        setFavoriteMoviesList(props.movies.filter(m => response.data.Favorites.includes(m._id)));
+        // setUpdatedUser(response.data)
+        // setFavoriteMoviesList(props.movies.filter(m => response.data.Favorites.includes(m._id)));
 
       })
       .catch(err => {
@@ -99,6 +99,29 @@ export function ProfileView(props) {
         });
 }
 
+console.log(props.user);
+console.log(props.favoriteMovies);
+
+const movies = props.movies;
+
+let favorites = props.favoriteMovies;
+// setFavoriteMoviesList(props.favoriteMovies);
+
+
+    console.log(favorites);
+    console.log(movies);
+
+    let favoriteArr = [];
+
+    favoriteMoviesList.forEach( x => {
+      movies.forEach( y => {
+        if(x == y._id){
+          favoriteArr.push(y);
+        }
+      });
+    });
+
+    console.log(favoriteArr);
 
 return (
     
@@ -114,7 +137,32 @@ return (
     <Col  lg={7} md={6} sm={12} xs={12} id="profile-view">
       
         {/* Display userdata */}
-        <UserData userdata={userdata} />
+        {/* <UserData userdata={props.u} /> */}
+        
+        <Col >
+        <Row>
+          <Card id="userDataCard" style={{ textAlign: 'center', marginTop: 20 }}>
+            <Card.Title id="profile-header" style={{marginTop: 10}} >My Profile</Card.Title>
+            <Card.Body >
+            <label id="profile-label">Username:</label><p id="profile-text"> {userdata.Username}</p>
+            <label id="profile-label">Email:</label><p id="profile-text"> {userdata.Email}</p>
+            <label id="profile-label">Birthday:</label><p id="profile-text"> {userdata.Birthday}</p>
+            <label id="profile-label">Favorites:</label>
+
+              <p>
+                {favoriteArr.map(x=>  
+                <Link to={`/movies/${x._id}`}>  
+                  <Button className="value movies" id="favoriteMovies"> 
+                    {x.Title}
+                      </Button> 
+                  </Link>)}
+                  </p> 
+
+            </Card.Body>
+          </Card>
+        </Row>
+      </Col>
+
       </Col>
       <Col>
         <UpdatedUser userdata={userdata} handleSubmit={handleSubmit} handleUpdate={handleUpdate} />
