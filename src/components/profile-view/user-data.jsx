@@ -20,9 +20,6 @@ class UserData extends React.Component {
 
     let favorites = userdata.Favorites;
 
-    console.log(favorites);
-    console.log(movies);
-
     let favoriteArr = [];
 
     favorites.forEach( x => {
@@ -32,10 +29,6 @@ class UserData extends React.Component {
         }
       });
     });
-
-    console.log(favoriteArr);
-    
-    console.log(this.props.userdata);
 
     return (
       <Col >

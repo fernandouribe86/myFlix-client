@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Card from 'react-bootstrap/Card';
-import { Col, Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'; 
+import { BrowserRouter as Router, Route } from 'react-router-dom'; 
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { BsFillHeartFill } from 'react-icons/bs';
-import { BsHeart } from 'react-icons/bs';
-import { Connect } from "react-redux";
+
 
 import { Link } from "react-router-dom";
 
 import MovieCard from '../movie-card/movie-card';
-import { ProfileView } from "../profile-view/profile-view";
-import userData from "../profile-view/user-data";
+
 
 import './movie-view.scss';
 
@@ -74,10 +72,6 @@ export class MovieView extends React.Component {
     return(
       <Card id="movieViewCard">
         <div id="movie-view">
-          {/* <div id="movie-poster">
-          <Card.Img variant="top" src={movie.ImagePath} />
-    
-          </div>  */}
           <div id="movie-header" >
               <div id="movieTitle">{movie.Title}</div>
               <div id="movieViewHearts">

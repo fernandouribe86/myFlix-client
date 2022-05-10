@@ -84,18 +84,11 @@ class MainView extends React.Component {
         console.log(error);
       });
     }
-  /*When a movie is clicked, this function is invoked and updates the state of the `selectedMovie` *property to that movie*/
-
-  // setSelectedMovie(newSelectedMovie) {
-  //   this.setState({
-  //     selectedMovie: newSelectedMovie
-  //   });
-  // }
 
   /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
 
   onLoggedIn(authData) {
-    console.log(authData);
+    // console.log(authData);
     this.setState({
       u: authData.user,
       user: authData.user.Username,
@@ -104,7 +97,7 @@ class MainView extends React.Component {
 
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
-    localStorage.setItem('favoriteMovies', authData.user.Favorites);
+    // localStorage.setItem('favoriteMovies', authData.user.Favorites);
     this.getMovies(authData.token);
   }
 
@@ -120,13 +113,8 @@ class MainView extends React.Component {
   render() {
 
     let { movies } = this.props;
-
-    console.log(this.state.u);
     
     const { user, selectedMovie, directors, genres, favoriteMovies } = this.state;
-    console.log(movies);
-    console.log(user);
-    console.log(favoriteMovies);
 
     return(
       <Router>
@@ -253,31 +241,3 @@ class MainView extends React.Component {
       }
 
       export default connect(mapStateToProps, { setMovies } )(MainView);
-
-    /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
-
-   
-    //   <Container>
-    //     <Row className ="justify-content-md-center main-view">
-    //       {/*If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all *movies will be returned*/}
-    //       {selectedMovie
-    //         ? (
-    //           <Col md={8}>
-    //             <MovieView  director={directors.filter(x=>selectedMovie.Director.includes(x._id) )} genre={genres.filter(x=>selectedMovie.Genres.includes(x._id) )} movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-    //             </Col>
-    //         )
-    //         : movies.map(movie => (
-    //             <Col md={3}>
-    //           <MovieCard  key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
-    //           </Col>
-
-    //       ))
-    //     }
-    //     </Row>
-    //     <Row>
-    //       <Col>
-    //       <button onClick={() => { this.onLoggedOut() }}>Logout</button>
-    //       </Col>
-    //     </Row>
-    //   </Container>
-    // };

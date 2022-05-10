@@ -72,252 +72,6 @@ footer {
   font-weight: lighter;
 }
 
-#userDataCard {
-  min-height: 100%;
-  background-color: snow;
-  padding-top: 5px;
-}
-
-#userUpdateCard {
-  min-height: 650px;
-  background-color: snow;
-  margin-top: 20px;
-}
-
-#favoritesProfile {
-  background-color: snow;
-}
-
-#profile-view {
-  flex-direction: row;
-  display: flex;
-}
-
-#profile-header, .profile-header {
-  text-align: center;
-  letter-spacing: .01em;
-  text-transform: uppercase;
-  color: #1e334c;
-  margin-top: 15px;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 32px;
-  font-weight: 300;
-}
-
-.label, #profile-label {
-  text-align: center;
-  letter-spacing: .01em;
-  text-transform: uppercase;
-  color: #4b0000;
-  margin-left: 25px;
-  margin-right: 25px;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 26px;
-  font-weight: 300;
-}
-
-#profile-text, .profileText {
-  color: #000b0b;
-  font-family: Lato, Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-
-#form-field {
-  color: #000b0b;
-  max-width: 90%;
-  margin-left: 25px;
-  margin-right: 25px;
-  font-family: Lato, Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-
-#return {
-  text-transform: uppercase;
-  color: #000b0b;
-  letter-spacing: .05em;
-  min-width: 200px;
-  max-width: 80%;
-  background-color: #fbcccc;
-  border-style: none;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  font-weight: 300;
-}
-
-#back {
-  color: snow;
-}
-
-#update {
-  min-width: 25%;
-  color: #000b0b;
-  letter-spacing: .05em;
-  background-color: #fbcccc;
-  border: none;
-  margin-top: 25px;
-  margin-left: 25px;
-  margin-right: 25px;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  font-weight: 300;
-}
-
-#message {
-  margin: 10px 25px 25px;
-  font-family: Lato, Arial, Helvetica, sans-serif;
-  font-size: 12px;
-}
-
-#deleteAccount {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  display: flex;
-}
-
-#delete-btn {
-  color: snow;
-  letter-spacing: .05em;
-  background-color: #4b0000;
-  border-style: none;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  font-weight: 300;
-}
-
-#favoriteMovies {
-  color: snow;
-  background-color: #1e334c;
-  border-style: none;
-  margin-top: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-#movieViewCard {
-  background-color: snow;
-}
-
-#movie-header {
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  margin-top: 15px;
-  margin-left: 15px;
-  display: flex;
-}
-
-.label {
-  color: #1e334c;
-  text-align: center;
-  letter-spacing: .01em;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 32px;
-  font-weight: 300;
-}
-
-.value {
-  text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
-  font-family: Lato, Arial, Helvetica, sans-serif;
-}
-
-#movieTitle {
-  color: #4b0000;
-  text-align: center;
-  text-transform: uppercase;
-  padding-left: 25px;
-  padding-right: 25px;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 55px;
-}
-
-.button-container {
-  justify-content: center;
-  display: flex;
-}
-
-#backButton {
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: .3em;
-  background-color: #1e334c;
-  border-style: none;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  padding: 10px 50px;
-  font-family: Teko, Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  font-weight: 300;
-}
-
-#backButton:hover, #backButton:focus {
-  background-color: #355b88;
-}
-
-#backButton:active {
-  background-color: #fb0;
-}
-
-#genres {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-#movie-director {
-  text-align: center;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-}
-
-#movie-genre {
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-#directors {
-  border-style: none;
-  border-color: none;
-  background-color: #4b0000;
-  border-radius: 0;
-  margin-bottom: 25px;
-  margin-left: 25px;
-  margin-right: 25px;
-}
-
-#genres {
-  border-style: none;
-  border-color: none;
-  width: 200px;
-  background-color: #4b0000;
-  border-radius: 0;
-  margin-bottom: 25px;
-  margin-left: 25px;
-  margin-right: 25px;
-}
-
-#genres:hover, #genres:focus, #directors:hover, #directors:focus {
-  background-color: #a82429;
-}
-
-#genres:active, #directors:focus {
-  background-color: #fb0;
-}
-
-#movieViewHearts {
-  justify-content: center;
-  align-items: middle;
-  flex-direction: row;
-  display: flex;
-}
-
 #movieCard {
   min-height: 600px;
   color: snow;
@@ -522,6 +276,252 @@ footer {
   margin-top: 25px;
   margin-bottom: 10px;
   font-size: 12px;
+}
+
+#movieViewCard {
+  background-color: snow;
+}
+
+#movie-header {
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin-top: 15px;
+  margin-left: 15px;
+  display: flex;
+}
+
+.label {
+  color: #1e334c;
+  text-align: center;
+  letter-spacing: .01em;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.value {
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+#movieTitle {
+  color: #4b0000;
+  text-align: center;
+  text-transform: uppercase;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 55px;
+}
+
+.button-container {
+  justify-content: center;
+  display: flex;
+}
+
+#backButton {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  background-color: #1e334c;
+  border-style: none;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 10px 50px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+#backButton:hover, #backButton:focus {
+  background-color: #355b88;
+}
+
+#backButton:active {
+  background-color: #fb0;
+}
+
+#genres {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#movie-director {
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+#movie-genre {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#directors {
+  border-style: none;
+  border-color: none;
+  background-color: #4b0000;
+  border-radius: 0;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#genres {
+  border-style: none;
+  border-color: none;
+  width: 200px;
+  background-color: #4b0000;
+  border-radius: 0;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#genres:hover, #genres:focus, #directors:hover, #directors:focus {
+  background-color: #a82429;
+}
+
+#genres:active, #directors:focus {
+  background-color: #fb0;
+}
+
+#movieViewHearts {
+  justify-content: center;
+  align-items: middle;
+  flex-direction: row;
+  display: flex;
+}
+
+#userDataCard {
+  min-height: 100%;
+  background-color: snow;
+  padding-top: 5px;
+}
+
+#userUpdateCard {
+  min-height: 650px;
+  background-color: snow;
+  margin-top: 20px;
+}
+
+#favoritesProfile {
+  background-color: snow;
+}
+
+#profile-view {
+  flex-direction: row;
+  display: flex;
+}
+
+#profile-header, .profile-header {
+  text-align: center;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #1e334c;
+  margin-top: 15px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.label, #profile-label {
+  text-align: center;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #4b0000;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+}
+
+#profile-text, .profileText {
+  color: #000b0b;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#form-field {
+  color: #000b0b;
+  max-width: 90%;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#return {
+  text-transform: uppercase;
+  color: #000b0b;
+  letter-spacing: .05em;
+  min-width: 200px;
+  max-width: 80%;
+  background-color: #fbcccc;
+  border-style: none;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+#back {
+  color: snow;
+}
+
+#update {
+  min-width: 25%;
+  color: #000b0b;
+  letter-spacing: .05em;
+  background-color: #fbcccc;
+  border: none;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+#message {
+  margin: 10px 25px 25px;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+#deleteAccount {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  display: flex;
+}
+
+#delete-btn {
+  color: snow;
+  letter-spacing: .05em;
+  background-color: #4b0000;
+  border-style: none;
+  font-family: Teko, Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+#favoriteMovies {
+  color: snow;
+  background-color: #1e334c;
+  border-style: none;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #directorView {

@@ -27,9 +27,8 @@ export function ProfileView(props) {
       cancelToken: cancelToken
     })
       .then(response => {
-        console.log(response);
         setUserdata(response.data);
-        // setUpdatedUser(response.data)
+        setUpdatedUser(response.data)
         // setFavoriteMoviesList(props.movies.filter(m => response.data.Favorites.includes(m._id)));
 
       })
@@ -99,17 +98,9 @@ export function ProfileView(props) {
         });
 }
 
-console.log(props.user);
-console.log(props.favoriteMovies);
-
 const movies = props.movies;
 
 let favorites = props.favoriteMovies;
-// setFavoriteMoviesList(props.favoriteMovies);
-
-
-    console.log(favorites);
-    console.log(movies);
 
     let favoriteArr = [];
 
@@ -120,8 +111,6 @@ let favorites = props.favoriteMovies;
         }
       });
     });
-
-    console.log(favoriteArr);
 
 return (
     
@@ -137,8 +126,6 @@ return (
     <Col  lg={7} md={6} sm={12} xs={12} id="profile-view">
       
         {/* Display userdata */}
-        {/* <UserData userdata={props.u} /> */}
-        
         <Col >
         <Row>
           <Card id="userDataCard" style={{ textAlign: 'center', marginTop: 20 }}>
@@ -166,14 +153,9 @@ return (
       </Col>
       <Col>
         <UpdatedUser userdata={userdata} handleSubmit={handleSubmit} handleUpdate={handleUpdate} />
-        
-
-        
     </Col>
     </Row>
     </Container>
-    
+  
 );
-
-
 }
