@@ -3,8 +3,6 @@ import axios from 'axios';
 
 import { connect } from 'react-redux';
 
-import { setMovies } from "../../actions/actions";
-
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import { setMovies } from '../../actions/actions';
