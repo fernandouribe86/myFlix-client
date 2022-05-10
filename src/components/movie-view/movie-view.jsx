@@ -26,22 +26,9 @@ export class MovieView extends React.Component {
 
     let user = localStorage.getItem("user");
 
-    // IS THIS MOVIE A FAVORITE ALREADY?
-    let favorites = favoriteMovies;
-    console.log(user);
-    console.log(favorites);
+    let favorites = this.props.favoriteMovies;
 
-
-
-    console.log(movie);
-
-    let selectedMovieId = localStorage.getItem("movieId");
-    console.log(selectedMovieId);
-
-    console.log(typeof(favorites));
-
-    // console.log((favorites.find( x => x == selectedMovieId))+ ' Testing 456');
-
+    let selectedMovieId = movie._id;
 
     // LOOPS FOR MAPPING GENRES AND DIRECTORS
       let arr = [];
@@ -61,7 +48,6 @@ export class MovieView extends React.Component {
       })
 
     console.log(arr);
-
 
     const addFavorite = (e) => {
       axios.post(`https://fernando-myflix-3.herokuapp.com/users/${user}/movies/${movie._id}`)
@@ -91,18 +77,19 @@ export class MovieView extends React.Component {
           {/* <div id="movie-poster">
           <Card.Img variant="top" src={movie.ImagePath} />
     
-          </div> */}
+          </div>  */}
           <div id="movie-header" >
               <div id="movieTitle">{movie.Title}</div>
               <div id="movieViewHearts">
-                {/* <Button onClick={removeFavorite} hidden={this.state.hide} id="heart-filled" variant="outline-none"> */}
-                  
-                    {(favoriteMovies.find(x => x == selectedMovieId)!= undefined) ?
-                    <Button onClick={removeFavorite} hidden={this.state.hide} id="heart-filled" variant="outline-none"> 
-                      <BsFillHeartFill  id="heartActive"  />:
+                    {(JSON.stringify(favorites.find(x => x == selectedMovieId))=== "\"" + selectedMovieId + "\"")?
+                      <Button onClick={removeFavorite}  id="heart-filled" variant="outline-none"> 
+                        <BsFillHeartFill  id="heartActive"  />
+                      </Button>:
+
+                      <Button variant="outline-none" onClick={addFavorite} id="heart-outlined">
+                        <BsFillHeartFill id="heartInactive" /> 
                       </Button>
-                      <Button variant="outline-none" onClick={addFavorite} hidden={this.state.hide} id="heart-outlined">
-                      <BsFillHeartFill id="heartInactive" /> </Button>}
+                      }
               </div>
           </div>
           <div className="movie-description">

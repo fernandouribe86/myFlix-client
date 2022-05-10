@@ -25,30 +25,6 @@ export class MovieCard extends React.Component {
 
     let user = localStorage.getItem("user");
 
-    // const addFavorite = (e) => {
-    //   axios.post(`https://fernando-myflix-3.herokuapp.com/users/${user}/movies/${movie._id}`)
-    //   .then(response => {
-    //     alert('Movie has been added to your list of favorites');
-    //     this.setState({hide: "hidden"});
-    //   })
-    //   .catch(e=> {
-    //     console.log(e);
-    //   });
-    // };
-  
-    // const removeFavorite = (e) => {
-    //   axios.delete(`https://fernando-myflix-3.herokuapp.com/users/${user}/movies/${movie._id}`)
-    //   .then(response => {
-    //     alert('Movie has been removed to your list of favorites');
-    //     this.setState({hide: ""});
-    //   })
-    //   .catch(e=> {
-    //     console.log(e);
-    //   });
-    // };
-
-    // console.log(movie.ImagePath)
-
     return (
         <Card id="movieCard">
                   <Card.Img variant="top" src={movie.ImagePath}  id ="poster" style={{width: "100%"}}/>
@@ -60,12 +36,6 @@ export class MovieCard extends React.Component {
                   <Link to={`/movies/${movie._id}`}>
                     <Button variant="link" id="moreButton">...more</Button>
                     </Link>
-                    {/* <Button onClick={removeFavorite} hidden={this.state.hide} id="heart-filled" variant="outline-none">
-                      <BsFillHeartFill  id="heartActive"  />
-                      </Button>
-                      <Button variant="outline-none" onClick={addFavorite} hidden={this.state.hide} id="heart-outlined">
-                        <BsFillHeartFill id="heartInactive" />
-                      </Button> */}
                 </div>
                 </Card.Body>
           </Card>
