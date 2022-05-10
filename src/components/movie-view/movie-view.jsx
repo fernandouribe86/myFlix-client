@@ -45,8 +45,6 @@ export class MovieView extends React.Component {
         })
       })
 
-    console.log(arr);
-
     const addFavorite = (e) => {
       axios.post(`https://fernando-myflix-3.herokuapp.com/users/${user}/movies/${movie._id}`)
       .then(response => {
