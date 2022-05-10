@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Movie Database  Website",
   "source": "src/index.html",
+  "main": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel",
@@ -36,7 +37,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.4.1",
-    "parcel": "^2.4.1",
+    "parcel": "^2.0.0-rc.0",
     "process": "^0.11.10"
   }
 }
