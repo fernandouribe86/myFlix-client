@@ -1,0 +1,154 @@
+#userDataCard{
+  background-color: #fffafa;
+  min-height: 100%;
+  padding-top: 5px;
+}
+
+#userUpdateCard{
+  background-color: #fffafa;
+  margin-top: 20px;
+  min-height: 650px;
+}
+
+#favoritesProfile{
+  background-color: #fffafa;
+}
+
+#profile-view{
+  display: flex;
+  flex-direction: row;
+}
+
+#profile-header{
+  margin-top: 15px;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #1e334c;
+}
+
+.profile-header{
+  margin-top: 15px;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #1e334c;
+}
+.label{
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #4b0000;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#profile-label{
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #4b0000;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#profile-text{
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #000b0b;
+}
+
+.profileText{
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #000b0b;
+}
+
+#form-field{
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #000b0b;
+  max-width: 90%;
+
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#return{
+  background-color: #fbcccc;
+  text-transform: uppercase;
+  color: #000b0b;
+  border-style: none;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: .05em;
+  min-width: 200px;
+  max-width: 80%;
+}
+
+#back{
+  color: #fffafa;
+}
+
+#update{
+  margin-top: 25px;
+  background-color: #fbcccc;
+  min-width: 25%;
+  border: none;
+  color: #000b0b;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: .05em;
+}
+
+#message{
+  margin-top: 10px;
+  font-size: 12px;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#deleteAccount{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#delete-btn{
+  background-color: #4b0000;
+  border-style: none;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  color: #fffafa;
+  letter-spacing: .05em;
+}
+
+#favoriteMovies{
+  background-color: #1e334c;
+  border-style: none;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #fffafa;
+}

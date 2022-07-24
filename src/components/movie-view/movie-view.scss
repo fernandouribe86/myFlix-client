@@ -1,0 +1,130 @@
+#movieViewCard{
+  background-color: #fffafa;
+}
+
+#movie-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+
+
+.label{
+  color: #1e334c;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: .01em;
+}
+
+.value{
+  text-align: center;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#movieTitle{
+  color: #4b0000;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 55px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+}
+
+#backButton{
+  background-color: #1e334c;
+  color: white;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  border-style: none;
+}
+
+#backButton:hover, #backButton:focus{
+  background-color: #355b88;
+}
+
+#backButton:active{
+  background-color: rgb(255, 187, 0);
+}
+
+#genres{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#movie-director{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#movie-genre{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+#directors{
+  background-color: #4b0000;
+  border-style: none;
+  border-color: none;
+  border-radius: 0;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+
+#genres{
+  background-color: #4b0000;
+  border-style: none;
+  border-color: none;
+  border-radius: 0;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  width: 200px;
+
+}
+
+#genres:hover, #genres:focus, #directors:hover, #directors:focus{
+  background-color: rgb(168, 36, 41);
+}
+
+#genres:active, #directors:focus{
+  background-color: rgb(255, 187, 0);
+}
+
+
+#movieViewHearts{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: middle;
+}

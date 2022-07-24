@@ -1,5 +1,80 @@
-$color: steelblue;
-
-.my-flix{
-  color: $color;
+.body{
+  padding-top: 200px;
+  background-color: #1f2727;
+  min-height: 100vh;
+  margin: 0;
+  width: 100vw;
 }
+
+.app-container, .main-view{
+  width: 100%;
+}
+
+
+
+nav{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-bottom: 35px;
+padding-top: 25px;
+}
+
+
+
+.nav-list{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.nav-list li{
+  list-style: none;
+  text-decoration: none;
+  color: #fff4f5;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.middle{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+footer{
+  color: #fff4f5;
+  position: absolute;
+  background-color: #000b0b;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list a:visited{
+  text-decoration: none;
+	color: #fff4f5;
+}
+
+.nav-list a:hover, a:focus{
+  text-decoration: none;
+  color: #032f4a;
+}
+
+.nav-list a:active{
+  text-decoration: none;
+  color: #c41f25;
+}
+
+.copyright{
+  font-family: 'Teko',Arial, Helvetica, sans-serif;
+  font-weight:lighter;
+  font-size: 24px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+

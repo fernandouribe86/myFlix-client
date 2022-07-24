@@ -1,12 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
-export class MovieCard extends React.Component{
+import { Link } from "react-router-dom";
+
+import './movie-card.scss';
+
+export class MovieCard extends React.Component {
+
+  state = { hide: ""}
+
   render() {
-    const { movie, onMovieClick } = this.props;
+    const { movie } = this.props;
+
+    let user = localStorage.getItem("user");
 
     return (
-    <div onClick={() => onMovieClick(movie)} className="movie-card">{movie.Title}</div>
+        <Card id="movieCard">
+                  <Card.Img variant="top" src={movie.ImagePath}  id ="poster" style={{width: "100%"}}/>
+                <Card.Body>
+                  <Card.Title id="cardTitle">{movie.Title}</Card.Title>
+                  <div id="movieCardFooter">
+                  <Link to={`/movies/${movie._id}`}>
+                    <Button variant="link" id="moreButton">...more</Button>
+                    </Link>
+                </div>
+                </Card.Body>
+          </Card>
+
     );
   }
 }

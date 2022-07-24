@@ -1,0 +1,79 @@
+#directorView{
+  background-color: #fffafa;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#directorName{
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 45px;
+  font-weight: lighter;
+  color: #1e334c;
+  margin-bottom: -15px;
+}
+
+#bioTitle{
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #4b0000;
+  margin-right: 25px;
+  margin-bottom: -5px;
+}
+
+#life{
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  color: #2e4f78;
+  font-size: 28px;
+  font-weight: 100;
+}
+
+#bio{
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  color: #000b0b;
+  margin-bottom: 45px;
+}
+
+#directorBack{
+  background-color: #1e334c;
+  color: #fffafa;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: .1em;
+  border-style: none;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#directorBack:hover, #directorBack:focus{
+  background-color: #355b88;
+}
+
+#directorBack:active{
+  background-color: rgb(255, 187, 0);
+}
+
+#directorBackToMovies{
+  background-color: #fbcccc;
+  text-transform: uppercase;
+  color: #000b0b;
+  border-style: none;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: .05em;
+  min-width: 200px;
+  max-width: 80%;
+}
+
+#directorBackToMovies:hover, #directorBackToMovies:focus{
+  background-color: #d78686;
+}
+
+#directorBackToMovies:active{
+  background-color: #9b2d2d;
+}

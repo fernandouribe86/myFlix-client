@@ -1,0 +1,53 @@
+#registration-container{
+  min-height: 100vh;
+  margin-top: 200px;
+}
+
+#registerCard{
+  background-color: #fffafa;
+  padding-bottom: 25px;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 35px;
+}
+
+#registerForm{
+  background-color: #fffafa;
+  padding-bottom: 25px;
+  border: none;
+  border-radius: 12px;
+}
+
+#registerHeader{
+  background-color: #fbcccc;
+  color:#000b0b;
+  text-transform: uppercase;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+#registerFormBody{
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+#RegisterButton{
+  margin-top: 25px;
+  background-color: #fbcccc;
+  border: none;
+  color: #000b0b;
+}
+
+#login-error{
+  color: red;
+  font-size: 10px;
+}
+
+#required{
+  font-size: 10px;
+  color: gray;
+  margin-top: 10px;
+}
